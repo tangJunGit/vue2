@@ -1,0 +1,44 @@
+{
+  "name": "vue2",
+  "version": "1.0.0",
+  "description": "vue2",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "webpack-dev-server --config webpack.config.js --color --progress --open",
+    "build": "npm run clean && cross-env NODE_ENV=production webpack --config webpack.config.js --colors --progress",
+    "rimraf": "rimraf",
+    "clean": "npm run rimraf dist"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^7.1.2",
+    "babel-core": "^6.18.0",
+    "babel-helper-vue-jsx-merge-props": "^2.0.1",
+    "babel-loader": "^6.2.7",
+    "babel-plugin-syntax-jsx": "^6.18.0",
+    "babel-plugin-transform-object-assign": "^6.8.0",
+    "babel-plugin-transform-vue-jsx": "^3.1.1",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-stage-0": "^6.16.0",
+    "cross-env": "^3.1.3",
+    "css-loader": "^0.25.0",
+    "file-loader": "^0.9.0",
+    "html-webpack-plugin": "^2.24.0",
+    "less": "^2.7.1",
+    "less-loader": "^2.2.3",
+    "postcss-loader": "^2.0.6",
+    "rimraf": "^2.5.4",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "vue-loader": "^9.7.0",
+    "webpack": "^3.5.6",
+    "webpack-dev-server": "^2.3.0"
+  },
+  "dependencies": {
+    "vue": "^2.5.0",
+    "vue-router": "^2.1.1",
+    "vuex": "^2.0.0"
+  }
+}
