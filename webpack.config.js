@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const isProd = process.env.NODE_ENV == 'production';            // 生产环境为true
 
 
@@ -12,7 +13,7 @@ var plugins = [];
 if (isProd) { 
     plugins.push(new webpack.DefinePlugin({
         'process.env': {                                        // 设置成生产环境变量
-            NODE_ENV: 'production'
+            NODE_ENV: '"production"'
         }
     }))
     plugins.push(new webpack.optimize.UglifyJsPlugin({          // 压缩代码
@@ -26,7 +27,14 @@ plugins.push(
     new HtmlWebpackPlugin({                                     // 根据模板插入css/js等生成最终HTML
         filename: './index.html',                               // 生成的html存放路径，相对于 path
         template: './src/index.html',                           // html模板路径
-    })
+    }),
+
+    new CopyWebpackPlugin([                                     // 复制文件夹到assets
+        {
+            from: 'src/assets',
+            to: 'assets',
+        }
+    ])
 )
 
 
@@ -38,6 +46,9 @@ module.exports = {
     },
     resolve: {
         extensions: ['.js', '.vue', '.jsx'],                    // 后缀名自动补全
+        alias: {
+            'vue': 'vue/dist/vue.js'
+        }
     },
     module: {
         loaders: [
@@ -58,7 +69,7 @@ module.exports = {
             {
                 test: /\.less/,
                 exclude: /^node_modules$/,
-                loader: `style-loader!css-loader!postcss-loader!less-loader`
+                loader: `style-loader!css-loader!postcss-loader!less-loader!`
             },
             {
                 test: /\.(png|jpg)$/,
@@ -82,13 +93,7 @@ module.exports = {
         watchOptions: {
             aggregateTimeout: 100,
             poll: 500
-        },
-        // proxy: {
-        //     '/xx': {
-        //         target: 'http://xxxxxxx',
-        //         secure: false
-        //     }
-        // }
+        }
     },
     node: {
         global: true,

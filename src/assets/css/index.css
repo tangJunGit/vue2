@@ -1,0 +1,7 @@
+#app{
+  margin:30px 0;
+  text-align:center;
+}
+#app>.logo{
+  width:200px;
+}
