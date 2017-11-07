@@ -7,7 +7,12 @@ export default [
         component: index,
     },
     {
-      path: '*',
-      redirect: '/index'
+        path: '/lazyLoad',
+        name: 'lazyLoad',
+        component: resolve => require(['./pages/lazyLoad'], resolve)
+    },
+    {
+        path: '*',
+        redirect: '/index'
     }
 ]
