@@ -9,7 +9,7 @@ export default [
     {
         path: '/lazyLoad',
         name: 'lazyLoad',
-        component: resolve => require(['./pages/lazyLoad'], resolve)
+        component: resolve => require(['./pages/lazyLoad/index.vue'], resolve)
     },
     {
         path: '*',

@@ -45,7 +45,7 @@ module.exports = {
         filename: '[name].js?[hash]'                            // 编译后的文件名
     },
     resolve: {
-        extensions: ['.js', '.vue', '.jsx'],                    // 后缀名自动补全
+        extensions: ['.vue', '.js', '.jsx'],                    // 后缀名自动补全
         alias: {
             'vue': 'vue/dist/vue.js'
         }
