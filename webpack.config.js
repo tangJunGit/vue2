@@ -36,8 +36,8 @@ plugins.push(
             to: 'assets',
         }
     ]),
-    
-    new webpack.LoaderOptionsPlugin({                           
+
+    new webpack.LoaderOptionsPlugin({
         options: {
             postcss: [
                 require('autoprefixer')({
@@ -45,7 +45,7 @@ plugins.push(
                 })
             ]
         }
-    }),
+    })
 )
 
 
@@ -58,7 +58,8 @@ module.exports = {
     resolve: {
         extensions: ['.vue', '.js', '.jsx'],                    // 后缀名自动补全
         alias: {
-            'vue': 'vue/dist/vue.js'
+            'vue': 'vue/dist/vue.js',
+            'store': path.resolve('src/store/'),                // 常用工具方法
         }
     },
     module: {

@@ -5,11 +5,12 @@
     
     <div class="btns">
       <button class="btn" @click="goto">懒加载</button>
+      <router-link class="btn" to="login">守卫登录</router-link>
     </div>
 	</div>
 </template>
-<script src="./index.js"></script>
+<script src="./home.js"></script>
 <!--<style src="./index.css"></style>  这样引入的全局样式-->
 <style lang="less" scoped>
-@import url("./index.less");
+@import url("./home.less");
 </style>
