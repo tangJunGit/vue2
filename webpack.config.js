@@ -29,12 +29,23 @@ plugins.push(
         template: './src/index.html',                           // html模板路径
     }),
 
+
     new CopyWebpackPlugin([                                     // 复制文件夹到assets
         {
             from: 'src/assets',
             to: 'assets',
         }
-    ])
+    ]),
+    
+    new webpack.LoaderOptionsPlugin({                           
+        options: {
+            postcss: [
+                require('autoprefixer')({
+                    browsers: ['last 100 versions']
+                })
+            ]
+        }
+    }),
 )
 
 
