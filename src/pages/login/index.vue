@@ -12,6 +12,4 @@
     </form>
 </template>
 <script src="./login.js"></script>
-<style lang="less" scoped>
-@import url("./login.less");
-</style>
+<style lang="less" src="./login.less"></style>
