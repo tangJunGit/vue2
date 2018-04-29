@@ -1,16 +1,17 @@
-# vue2-webpack
+# vue2
 
-### Usage
+## Build Setup
 
-```bash
-# 安装
+``` bash
+# install dependencies
 npm install
 
-# 启动服务
-# url: http://localhost:8080
+# serve with hot reload at localhost:8080
 npm run dev
 
-# 打包编译项目
+# build for production with minification
 npm run build
-```
 
+# build for production and view the bundle analyzer report
+npm run build --report
+```
