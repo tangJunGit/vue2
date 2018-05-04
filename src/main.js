@@ -13,3 +13,13 @@ new Vue({
   components: { App },
   template: '<App/>'
 })
+
+router.beforeEach((to,from,next)=>{
+  // 守卫
+  if(to.name === 'Guard'){
+    next(false);
+    return;
+  }
+  next();
+});
+
