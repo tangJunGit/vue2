@@ -6,16 +6,28 @@ import router from './router'
 
 Vue.config.productionTip = false
 
+// vuex
+import Vuex from 'vuex'
+Vue.use(Vuex)
+
+// store
+import Store from './store'
+
+const store = new Vuex.Store({
+  modules: Store
+});
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
+  store,
   router,
   components: { App },
   template: '<App/>'
 })
 
+// 守卫
 router.beforeEach((to,from,next)=>{
-  // 守卫
   if(to.name === 'Guard'){
     next(false);
     return;
