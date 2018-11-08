@@ -1,3 +1,3 @@
 export const COUNT = {
-  ADD: 'add',
+  ADD: 'add'
 }

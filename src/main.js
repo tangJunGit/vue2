@@ -4,18 +4,18 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
-Vue.config.productionTip = false
-
 // vuex
 import Vuex from 'vuex'
-Vue.use(Vuex)
 
 // store
 import Store from './store'
 
+Vue.config.productionTip = false
+Vue.use(Vuex)
+
 const store = new Vuex.Store({
   modules: Store
-});
+})
 
 /* eslint-disable no-new */
 new Vue({
@@ -27,11 +27,10 @@ new Vue({
 })
 
 // 守卫
-router.beforeEach((to,from,next)=>{
-  if(to.name === 'Guard'){
-    next(false);
-    return;
-  }
-  next();
-});
-
+// router.beforeEach((to, from, next) => {
+//   if (to.name === 'HelloWorld') {
+//     next(false)
+//     return
+//   }
+//   next()
+// })
