@@ -1,5 +1,5 @@
-import count from './modules/count'
+import demo from './modules/demo'
 
 export default {
-  count
+  demo
 }

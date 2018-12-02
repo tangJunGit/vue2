@@ -1,3 +1,3 @@
-export const COUNT = {
+export const DEMO = {
   ADD: 'add'
 }

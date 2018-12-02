@@ -2,17 +2,26 @@ import Vue from 'vue'
 
 // 路由
 import Router from 'vue-router'
-
-import HelloWorld from '@/components/HelloWorld'
-// const HelloWorld = () => import('@/components/HelloWorld') // 懒加载
 Vue.use(Router)
+
+const login = () => import('../views/login.vue')
+const error_404 = () => import('../components/404.vue')
 
 export default new Router({
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
+      name: 'login',
+      component: login
+    },
+    {
+      path: '/404',
+      name: 'error_404',
+      component: error_404
+    },
+    { 
+      path: '*',
+      component: error_404 
     }
   ]
 })

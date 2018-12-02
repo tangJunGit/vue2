@@ -4,13 +4,20 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
-// vuex
+// vuex store
 import Vuex from 'vuex'
-
-// store
 import Store from './store'
 
+// css
+import './assets/css/normalize.css';
+import './assets/less/common.less'
+
+// ElementUI
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
+
 Vue.config.productionTip = false
+Vue.use(ElementUI);
 Vue.use(Vuex)
 
 const store = new Vuex.Store({
@@ -25,12 +32,3 @@ new Vue({
   components: { App },
   template: '<App/>'
 })
-
-// 守卫
-// router.beforeEach((to, from, next) => {
-//   if (to.name === 'HelloWorld') {
-//     next(false)
-//     return
-//   }
-//   next()
-// })
