@@ -4,9 +4,14 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
-// vuex store
+// vuex store filter
 import Vuex from 'vuex'
 import Store from './store'
+import filters from "./utils/filter";
+
+Object.keys(filters).forEach(key => {  
+  Vue.filter(key, filters[key])
+})
 
 // css
 import './assets/css/normalize.css';

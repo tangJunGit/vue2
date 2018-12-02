@@ -5,7 +5,7 @@ const state = {
 }
 
 const getters = {
-  doneCount: (state, getters) =>
+  demoText: (state, getters) =>
     state.count > 10 ? '你真厉害！' : '再接再厉吧！'
 }
 
