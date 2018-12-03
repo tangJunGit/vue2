@@ -1,7 +1,7 @@
 <template>
   <div class="error_404-wrap">
     <div class="error_404-section">
-      <img src="../../static/img/error_404.jpg" alt>
+      <img src="../assets/images/error_404.jpg" alt>
       <div class="reminder">
         <div>
           <span class="text">哎呀，看来你拐错弯啦。</span>
