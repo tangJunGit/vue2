@@ -5,7 +5,7 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 const login = () => import('../views/login.vue')
-const error_404 = () => import('../components/error_404.vue')
+const error404 = () => import('../components/error_404.vue')
 
 export default new Router({
   routes: [
@@ -15,13 +15,13 @@ export default new Router({
       component: login
     },
     {
-      path: '/error_404',
-      name: 'error_404',
-      component: error_404
+      path: '/404',
+      name: 'error404',
+      component: error404
     },
-    { 
+    {
       path: '*',
-      redirect: '/error_404'
+      redirect: '/404'
     }
   ]
 })

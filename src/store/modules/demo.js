@@ -11,7 +11,7 @@ const getters = {
 
 const mutations = {
   [DEMO.ADD] (state) {
-    state.count++    // 变更状态
+    state.count++ // 变更状态
   }
 }
 

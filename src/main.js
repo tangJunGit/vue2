@@ -7,22 +7,22 @@ import router from './router'
 // vuex store filter
 import Vuex from 'vuex'
 import Store from './store'
-import filters from "./utils/filter";
-
-Object.keys(filters).forEach(key => {  
-  Vue.filter(key, filters[key])
-})
+import filters from './utils/filter'
 
 // css
-import './assets/css/normalize.css';
+import './assets/css/normalize.css'
 import './assets/less/common.less'
 
 // ElementUI
-import ElementUI from 'element-ui';
-import 'element-ui/lib/theme-chalk/index.css';
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
+
+Object.keys(filters).forEach(key => {
+  Vue.filter(key, filters[key])
+})
 
 Vue.config.productionTip = false
-Vue.use(ElementUI);
+Vue.use(ElementUI)
 Vue.use(Vuex)
 
 const store = new Vuex.Store({

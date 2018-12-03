@@ -10,6 +10,5 @@ export default {
 }
 </script>
 <style lang="less" scoped>
-@import url('./assets/less/app.less');
+@import url("./assets/less/app.less");
 </style>
-
