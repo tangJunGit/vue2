@@ -17,6 +17,10 @@ import './assets/less/common.less'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 
+// echarts
+// import echarts from 'echarts'
+// Vue.prototype.$echarts = echarts
+
 Object.keys(filters).forEach(key => {
   Vue.filter(key, filters[key])
 })
