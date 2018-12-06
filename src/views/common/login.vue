@@ -44,5 +44,5 @@ export default {
 }
 </script>
 <style lang="less" scoped>
-@import url("../assets/less/login.less");
+@import url("../../assets/less/login.less");
 </style>

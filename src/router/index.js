@@ -4,8 +4,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 Vue.use(Router)
 
-const login = () => import('../views/login.vue')
-const error404 = () => import('../components/error_404.vue')
+const login = () => import('../views/common/login.vue')
+const error404 = () => import('../views/common/error_404.vue')
 
 export default new Router({
   routes: [
