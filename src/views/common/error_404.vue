@@ -22,5 +22,5 @@ export default {
 }
 </script>
 <style lang="less" scoped>
-@import url("../../assets/less/error_404.less");
+@import url("../../assets/less/common/error_404.less");
 </style>

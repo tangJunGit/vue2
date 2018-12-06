@@ -11,7 +11,7 @@ import filters from './utils/filter'
 
 // css
 import './assets/css/normalize.css'
-import './assets/less/common.less'
+import './assets/less/common/common.less'
 
 // ElementUI
 import ElementUI from 'element-ui'
