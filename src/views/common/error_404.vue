@@ -1,5 +1,5 @@
 <template>
-  <div class="error_404-wrap">
+  <div class="t-error_404-wrap">
     <div class="error_404-section">
       <img src="../../assets/images/error_404.jpg" alt>
       <div class="reminder">
