@@ -8,7 +8,6 @@
     
     <!-- 菜单列表 -->
     <el-menu class="menu"
-      default-active="1-1"
       background-color="#545c64"
       text-color="#fff"
       active-text-color="#409EFF">
@@ -18,7 +17,7 @@
           <span>{{item.label}}</span>
         </template>
         <el-menu-item-group>
-          <el-menu-item v-for="child in item.children" :key="child.index" :index="child.index">{{child.label}}</el-menu-item>
+          <el-menu-item v-for="child in item.children" :key="child.index" :index="child.index" @click="goto(child.path)">{{child.label}}</el-menu-item>
         </el-menu-item-group>
       </el-submenu>
     </el-menu>
@@ -36,15 +35,22 @@ export default {
           children: [
             {
               index: '1-1',
-              label: '表格'
+              label: '表格',
+              path: '/demo/table'
             },
             {
               index: '1-2',
-              label: '表单'
+              label: '表单',
+              path: '/demo/form'
             }
           ]
         }
       ]
+    }
+  },
+  methods: {
+    goto(path){
+      this.$router.push(path)
     }
   }
 }

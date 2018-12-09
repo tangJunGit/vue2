@@ -8,7 +8,7 @@
         <el-aside width="200px" class="aside">
           <menuAside></menuAside>
         </el-aside>
-        <el-main>
+        <el-main class="t-main-wrap">
           <router-view/>
         </el-main>
       </el-container>
