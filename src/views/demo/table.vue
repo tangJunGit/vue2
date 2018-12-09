@@ -1,19 +1,7 @@
 <template>
   <div class="t-table-wrap">
     <!-- title -->
-    <el-row>
-      <el-col :span="12">
-        <div class="t-page-title">
-          <h1>表格</h1>
-        </div>
-      </el-col>
-      <el-col :span="12" class="text-right">
-        <el-breadcrumb separator-class="el-icon-arrow-right" class="t-page-breadcrumb">
-          <el-breadcrumb-item>样式</el-breadcrumb-item>
-          <el-breadcrumb-item>表格</el-breadcrumb-item>
-        </el-breadcrumb>
-      </el-col>
-    </el-row>
+    <pageBreadcrumb title="样式" :items="['样式','表格']"></pageBreadcrumb>
 
     <!-- card -->
     <el-card class="box-card">
@@ -59,6 +47,7 @@
   </div>
 </template>
 <script>
+import pageBreadcrumb from "../common/pageBreadcrumb";
 export default {
   data() {
     return {
@@ -75,31 +64,31 @@ export default {
       tableData: [{
         date: '2018-08-08',
         name: '张三',
-        address: '成都市'
+        address: '北京'
       }, {
         date: '2018-05-02',
         name: '李四',
-        address: '成都市'
+        address: '北京'
       }, {
         date: '2018-05-04',
         name: '张三',
-        address: '成都市'
+        address: '成都'
       }, {
         date: '2018-05-01',
         name: '李四',
-        address: '成都市'
+        address: '上海'
       }, {
         date: '2018-05-08',
         name: '张三',
-        address: '成都市'
+        address: '成都'
       }, {
         date: '2018-05-06',
         name: '李四',
-        address: '成都市'
+        address: '上海'
       }, {
         date: '2018-05-07',
         name: '张三',
-        address: '成都市'
+        address: '北京'
       }]
     }
   },
@@ -116,6 +105,9 @@ export default {
     handleCurrentChange(val) {
       this.currentPage = val;
     }
+  },
+  components: {
+    pageBreadcrumb
   }
 }
 </script>
