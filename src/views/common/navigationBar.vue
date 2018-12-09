@@ -1,10 +1,13 @@
 <template>
-  <div class="t-navigation-wrap">
+  <div class="t-navigationBar-wrap">
     <el-row>
-        <el-col :span="12">
+        <!-- 左边 -->
+        <el-col :span="8">
           <img class="logo" src="../../assets/images/logo.png" alt="">
         </el-col>
-        <el-col :span="12" class="text-right">
+        
+        <!-- 右边 -->
+        <el-col :span="16" class="text-right">
           <el-badge is-dot class="badge t-item">
             <i class="el-icon-bell"></i>
           </el-badge>
@@ -25,5 +28,5 @@ export default {
 }
 </script>
 <style lang="less" scoped>
-@import url("../../assets/less/common/navigation.less");
+@import url("../../assets/less/common/navigationBar.less");
 </style>

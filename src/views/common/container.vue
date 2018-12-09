@@ -2,11 +2,11 @@
   <div class="t-container-wrap">
     <el-container class="container">
       <el-header height="60px" class="header">
-        <navigation></navigation>
+        <navigationBar></navigationBar>
       </el-header>
       <el-container>
         <el-aside width="200px" class="aside">
-          <p>Aside</p>
+          <menuAside></menuAside>
         </el-aside>
         <el-main>
           <router-view/>
@@ -16,10 +16,12 @@
   </div>
 </template>
 <script>
-import navigation from "./navigation.vue";
+import navigationBar from "./navigationBar";
+import menuAside from "./menuAside";
 export default {
   components:{
-    navigation
+    navigationBar,
+    menuAside
   }
 }
 </script>
