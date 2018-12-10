@@ -39,7 +39,7 @@ export default {
         if (!valid) return
         this.isCommit = false
 
-        this.$router.push({name: 'container'})
+        this.$router.push({ name: 'container' })
       })
     }
   }

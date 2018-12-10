@@ -1,4 +1,11 @@
-const data = {
+const _ = {
+  /**
+   * 通过对象的 path 获取值
+   *
+   * object   对象
+   * path     路径
+   * defaultValue    默认值
+   */
   get (object, path, defaultValue) {
     let _getValue = function (object, path) {
       path = _stringToPath(path + '')
@@ -25,12 +32,24 @@ const data = {
     let result = object == null ? undefined : _getValue(object, path)
     return result === undefined ? defaultValue : result
   },
+  /**
+   * 通过真检查时，返回第一个索引值
+   *
+   * array    数组
+   * attrs    检查的键值对
+   */
   findIndex (array, attrs) {
     for (let i = 0, length = array.length; i < length; i++) {
-      if (data.isMatch(array[i], attrs)) return i
+      if (_.isMatch(array[i], attrs)) return i
     }
     return -1
   },
+  /**
+   * 键和值是否包含在object中
+   *
+   * object   对象
+   * attrs    匹配的键值对
+   */
   isMatch (object, attrs) {
     let keys = Object.keys(attrs)
     let length = keys.length
@@ -42,6 +61,10 @@ const data = {
     }
     return true
   },
+  /**
+   * 克隆对象
+   * @param {*} data
+   */
   clone (data) {
     const obj = {}
     for (let key in data) {
@@ -83,4 +106,4 @@ const time = {
   }
 }
 
-export { data, time }
+export { _, time }

@@ -2,22 +2,24 @@
   <div class="t-menuAside-wrap">
     <!-- 用户信息 -->
     <div class="user-panel">
-      <img class="avatar" src="../../assets/images/avatar.jpg" alt="">
+      <img class="avatar" src="../../assets/images/avatar.jpg" alt>
       <p class="info">烟花易冷</p>
     </div>
-    
+
     <!-- 菜单列表 -->
-    <el-menu class="menu"
-      background-color="#545c64"
-      text-color="#fff"
-      active-text-color="#409EFF">
+    <el-menu class="menu" background-color="#545c64" text-color="#fff" active-text-color="#409EFF">
       <el-submenu v-for="item in menuLIst" :key="item.index" :index="item.index">
         <template slot="title">
           <i :class="item.icon"></i>
           <span>{{item.label}}</span>
         </template>
         <el-menu-item-group>
-          <el-menu-item v-for="child in item.children" :key="child.index" :index="child.index" @click="goto(child.path)">{{child.label}}</el-menu-item>
+          <el-menu-item
+            v-for="child in item.children"
+            :key="child.index"
+            :index="child.index"
+            @click="goto(child.path)"
+          >{{child.label}}</el-menu-item>
         </el-menu-item-group>
       </el-submenu>
     </el-menu>
@@ -25,10 +27,10 @@
 </template>
 <script>
 export default {
-  data(){
+  data () {
     return {
       menuLIst: [
-        { 
+        {
           index: '1',
           label: '样式',
           icon: 'el-icon-menu',
@@ -49,7 +51,7 @@ export default {
     }
   },
   methods: {
-    goto(path){
+    goto (path) {
       this.$router.push(path)
     }
   }

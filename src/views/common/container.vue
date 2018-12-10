@@ -16,10 +16,10 @@
   </div>
 </template>
 <script>
-import navigationBar from "./navigationBar";
-import menuAside from "./menuAside";
+import navigationBar from './navigationBar'
+import menuAside from './menuAside'
 export default {
-  components:{
+  components: {
     navigationBar,
     menuAside
   }

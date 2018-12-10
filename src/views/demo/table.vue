@@ -12,16 +12,20 @@
         </el-form-item>
         <el-form-item label="姓名：">
           <el-select v-model="conditionForm.name" placeholder="请选择">
-            <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value">
-            </el-option>
-          </el-select>  
+            <el-option
+              v-for="item in options"
+              :key="item.value"
+              :label="item.label"
+              :value="item.value"
+            ></el-option>
+          </el-select>
         </el-form-item>
       </el-form>
 
       <!-- table -->
-      <el-table :data="tableData" border  class="t-table">
+      <el-table :data="tableData" border class="t-table">
         <el-table-column prop="date" label="日期" width="180"></el-table-column>
-        <el-table-column prop="name" label="姓名" width="180"> </el-table-column>
+        <el-table-column prop="name" label="姓名" width="180"></el-table-column>
         <el-table-column prop="address" label="地址"></el-table-column>
         <el-table-column fixed="right" label="操作" width="100">
           <template slot-scope="scope">
@@ -32,7 +36,8 @@
       </el-table>
 
       <!-- pagination -->
-      <el-pagination class="t-pagination"
+      <el-pagination
+        class="t-pagination"
         background
         @size-change="handleSizeChange"
         @current-change="handleCurrentChange"
@@ -40,18 +45,17 @@
         :page-sizes="[100, 200, 300, 400]"
         :page-size="pageSize"
         :total="400"
-        layout="total, sizes, prev, pager, next, jumper">
-      </el-pagination>
+        layout="total, sizes, prev, pager, next, jumper"
+      ></el-pagination>
     </el-card>
-    
   </div>
 </template>
 <script>
 import pageBreadcrumb from "../common/pageBreadcrumb";
 export default {
-  data() {
+  data () {
     return {
-      conditionForm:{},
+      conditionForm: {},
       currentPage: 1,
       pageSize: 100,
       options: [{
@@ -96,13 +100,13 @@ export default {
     /**
      * 改变每页多少条
      */
-    handleSizeChange(val) {
+    handleSizeChange (val) {
       this.pageSize = val;
     },
     /**
      * 当前页数
      */
-    handleCurrentChange(val) {
+    handleCurrentChange (val) {
       this.currentPage = val;
     }
   },

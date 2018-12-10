@@ -44,7 +44,7 @@
 <script>
 import pageBreadcrumb from "../common/pageBreadcrumb";
 export default {
-  data(){
+  data () {
     return {
       form: {},
       rules: {}
