@@ -1,48 +1,47 @@
 <template>
   <div class="t-menuAside-wrap">
-    <!-- 用户信息 -->
-    <div class="user-panel">
-      <img class="avatar" src="../../assets/images/avatar.jpg" alt>
-      <p class="info">烟花易冷</p>
-    </div>
-
     <!-- 菜单列表 -->
-    <el-menu class="menu" background-color="#545c64" text-color="#fff" active-text-color="#409EFF">
+    <el-menu class="menu" :collapse="isCollapse"
+    background-color="rgb(48, 65, 86)" text-color="rgb(191, 203, 217)" active-text-color="rgb(64, 158, 255)">
       <el-submenu v-for="item in menuLIst" :key="item.index" :index="item.index">
         <template slot="title">
           <i :class="item.icon"></i>
           <span>{{item.label}}</span>
         </template>
-        <el-menu-item-group>
-          <el-menu-item
-            v-for="child in item.children"
-            :key="child.index"
-            :index="child.index"
-            @click="goto(child.path)"
-          >{{child.label}}</el-menu-item>
-        </el-menu-item-group>
+        <el-menu-item
+          v-for="child in item.children"
+          :key="child.index"
+          :index="child.index"
+          @click="goto(child.path)"
+        >{{child.label}}</el-menu-item>
       </el-submenu>
     </el-menu>
   </div>
 </template>
 <script>
 export default {
+  props:{
+    isCollapse: {
+      type: Boolean,
+      default: false
+    }
+  },
   data () {
     return {
       menuLIst: [
         {
           index: '1',
-          label: '样式',
-          icon: 'el-icon-menu',
+          label: '样式模板',
+          icon: 'fa fa-bookmark',
           children: [
             {
               index: '1-1',
-              label: '表格',
+              label: '表格页面',
               path: '/demo/table'
             },
             {
               index: '1-2',
-              label: '表单',
+              label: '表单页面',
               path: '/demo/form'
             }
           ]

@@ -35,9 +35,9 @@ export default {
       form: {},
       isCommit: false,
       rules: {
-        // accout: [{ required: true, message: '请输入账号', trigger: 'blur' }],
-        // password: [{ required: true, message: '请输入密码', trigger: 'blur' }],
-        // auth: [{ required: true, message: '请输入验证码', trigger: 'blur' }]
+        accout: [{ required: true, message: '请输入账号', trigger: 'blur' }],
+        password: [{ required: true, message: '请输入密码', trigger: 'blur' }],
+        auth: [{ required: true, message: '请输入验证码', trigger: 'blur' }]
       }
     }
   },

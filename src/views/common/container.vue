@@ -2,11 +2,11 @@
   <div class="t-container-wrap">
     <el-container class="container">
       <el-header height="60px" class="header">
-        <navigationBar></navigationBar>
+        <navigationBar :isCollapse="isCollapse" @changeCollapse="changeCollapse"></navigationBar>
       </el-header>
       <el-container>
-        <el-aside width="200px" class="aside">
-          <menuAside></menuAside>
+        <el-aside width="auto" class="aside">
+          <menuAside :isCollapse.sync="isCollapse"></menuAside>
         </el-aside>
         <el-main class="t-main-wrap">
           <router-view/>
@@ -19,6 +19,16 @@
 import navigationBar from './navigationBar'
 import menuAside from './menuAside'
 export default {
+  data() {
+    return {
+      isCollapse: false
+    }
+  },
+  methods: {
+    changeCollapse(isCollapse){
+      this.isCollapse = isCollapse;
+    }
+  },
   components: {
     navigationBar,
     menuAside

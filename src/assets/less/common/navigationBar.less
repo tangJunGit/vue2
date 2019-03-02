@@ -1,21 +1,39 @@
 .t-navigationBar-wrap {
-  .logo {
-    height: 40px;
-    vertical-align: middle;
+  width: 100%;
+  display: table;
+  .t-logo{
+    display: table-cell;
+    width: 200px;
+    height: 100%;
+    text-align: center;
+    background-color: rgb(48, 65, 86);
+    .logo {
+      height: 40px;
+      vertical-align: middle;
+    }
   }
-  .avatar {
-    height: 35px;
-    width: 35px;
-    vertical-align: middle;
-    border-radius: 50%;
+  .t-list{
+    padding-right: 20px;
+    .t-item {
+      margin-left: 10px;
+      cursor: pointer;
+    }
+    .t-icon{
+      font-size: 20px;
+      vertical-align: middle;
+    }
+    .t-avatar {
+      height: 35px;
+      width: 35px;
+      vertical-align: middle;
+      border-radius: 50%;
+    }
+    .t-bar{
+      padding-left: 20px;
+      font-size: 20px;
+      cursor: pointer;
+    }
   }
-  .badge {
-    height: 40px;
-    line-height: 40px;
-    font-size: 18px;
-  }
-  .t-item {
-    margin-left: 10px;
-    cursor: pointer;
-  }
+
+  
 }
