@@ -1,19 +1,28 @@
 <template>
   <div class="t-login-wrap">
     <div class="login-title">
-      <h1>xxx 管理平台</h1>
+      <h1><span>前端</span> 管理平台</h1>
     </div>
     <div class="login-section">
-      <div class="header">登录</div>
       <el-form ref="form" :rules="rules" :model="form">
         <el-form-item prop="accout">
-          <el-input v-model="form.accout" placeholder="请输入账号"></el-input>
+          <el-input v-model="form.accout" placeholder="请输入账号">
+            <template slot="prepend"><i class="fa fa-user"></i></template>
+          </el-input>
         </el-form-item>
         <el-form-item prop="password">
-          <el-input v-model="form.password" type="password" placeholder="请输入密码"></el-input>
+          <el-input v-model="form.password" type="password" placeholder="请输入密码">
+            <template slot="prepend"><i class="fa fa-lock"></i></template>
+          </el-input>
+        </el-form-item>
+        <el-form-item prop="auth">
+          <el-input v-model="form.auth" placeholder="请输入验证码">
+            <template slot="prepend"><i class="fa fa-random"></i></template>
+            <template slot="append"><img src="../../assets/images/auth_code.jpg" alt=""></template>
+          </el-input>
         </el-form-item>
         <el-form-item>
-          <el-button type="success" class="login-btn" @click="login">登录</el-button>
+          <el-button type="primary" class="login-btn" @click="login">登录</el-button>
         </el-form-item>
       </el-form>
     </div>
@@ -26,8 +35,9 @@ export default {
       form: {},
       isCommit: false,
       rules: {
-        accout: [{ required: true, message: '请输入账号', trigger: 'blur' }],
-        password: [{ required: true, message: '请输入密码', trigger: 'blur' }]
+        // accout: [{ required: true, message: '请输入账号', trigger: 'blur' }],
+        // password: [{ required: true, message: '请输入密码', trigger: 'blur' }],
+        // auth: [{ required: true, message: '请输入验证码', trigger: 'blur' }]
       }
     }
   },
