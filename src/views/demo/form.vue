@@ -5,23 +5,23 @@
 
     <!-- form -->
     <el-card class="box-card">
-      <el-form ref="form" :model="form" :rules="rules" label-width="100px">
+      <el-form ref="form" :model="form" :rules="rules" label-width="100px" size="small">
         <el-row>
           <el-col :span="12">
             <el-form-item label="姓名：" prop="name">
-              <el-input v-model="form.name" size="small"></el-input>
+              <el-input v-model="form.name"></el-input>
             </el-form-item>
           </el-col>
           <el-col :span="12">
             <el-form-item label="年龄：" prop="age">
-              <el-input v-model="form.age" size="small"></el-input>
+              <el-input v-model="form.age"></el-input>
             </el-form-item>
           </el-col>
         </el-row>
         <el-row>
           <el-col :span="12">
             <el-form-item label="地址：" prop="address">
-              <el-select v-model="form.address" size="small" placeholder="请选择">
+              <el-select v-model="form.address" placeholder="请选择">
                 <el-option label="北京" value="beijing"></el-option>
                 <el-option label="上海" value="shanghai"></el-option>
                 <el-option label="成都" value="chengdu"></el-option>
@@ -32,8 +32,8 @@
         <el-row>
           <el-col :span="24">
             <el-form-item class="text-right">
-              <el-button size="small">取消</el-button>
-              <el-button type="primary" size="small">保存</el-button>
+              <el-button>取消</el-button>
+              <el-button type="primary">保存</el-button>
             </el-form-item>
           </el-col>
         </el-row>

@@ -6,14 +6,14 @@
     <!-- card -->
     <el-card class="box-card">
       <!-- filter -->
-      <el-form :inline="true" :model="conditionForm" class="t-conditionForm">
+      <el-form :inline="true" :model="conditionForm" size="small" class="t-conditionForm">
         <el-form-item>
-          <el-input v-model="conditionForm.keyword" size="small" placeholder="输入关键字">
+          <el-input v-model="conditionForm.keyword" placeholder="输入关键字">
             <el-button slot="append">查询</el-button>
           </el-input>
         </el-form-item>
         <el-form-item label="姓名：">
-          <el-select v-model="conditionForm.name" size="small" placeholder="请选择">
+          <el-select v-model="conditionForm.name" placeholder="请选择">
             <el-option
               v-for="item in options"
               :key="item.value"
@@ -23,6 +23,11 @@
           </el-select>
         </el-form-item>
       </el-form>
+
+      <!-- operate -->
+      <div class="t-operate">
+        <el-button type="primary" size="mini" >新增</el-button>
+      </div>
 
       <!-- table -->
       <el-table :data="tableData" border size="small" class="t-table">
