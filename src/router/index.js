@@ -10,8 +10,7 @@ const container = () => import('../views/common/container.vue')
 const error404 = () => import('../views/common/error_404.vue')
 
 // demo
-const demoTable = () => import('../views/demo/table.vue')
-const demoForm = () => import('../views/demo/form.vue')
+const demoBase = () => import('../views/demo/base.vue')
 
 export default new Router({
   routes: [
@@ -26,14 +25,9 @@ export default new Router({
       component: container,
       children: [
         {
-          path: '/demo/table',
-          name: 'demoTable',
-          component: demoTable
-        },
-        {
-          path: '/demo/form',
-          name: 'demoForm',
-          component: demoForm
+          path: '/demo/base',
+          name: 'demoBase',
+          component: demoBase
         }
       ]
     },

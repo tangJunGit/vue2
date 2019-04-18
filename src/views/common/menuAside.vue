@@ -1,7 +1,7 @@
 <template>
   <div class="t-menuAside-wrap">
     <!-- 菜单列表 -->
-    <el-menu class="menu" :collapse="isCollapse"
+    <el-menu class="menu" :default-active="active" :collapse="isCollapse"
     background-color="rgb(48, 65, 86)" text-color="rgb(191, 203, 217)" active-text-color="rgb(64, 158, 255)">
       <el-submenu v-for="item in menuLIst" :key="item.index" :index="item.index">
         <template slot="title">
@@ -28,21 +28,17 @@ export default {
   },
   data () {
     return {
+      active: '1-1',
       menuLIst: [
         {
           index: '1',
-          label: '样式模板',
+          label: '一级菜单',
           icon: 'fa fa-bookmark',
           children: [
             {
               index: '1-1',
-              label: '表格页面',
-              path: '/demo/table'
-            },
-            {
-              index: '1-2',
-              label: '表单页面',
-              path: '/demo/form'
+              label: '二级菜单',
+              path: '/demo/base'
             }
           ]
         }
