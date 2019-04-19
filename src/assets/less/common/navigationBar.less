@@ -29,12 +29,96 @@
       vertical-align: middle;
       border-radius: 50%;
     }
+    .t-user{
+      font-weight: 900;
+      font-size: 15px;
+    }
     .t-bar{
-      padding-left: 20px;
+      margin-left: 20px;
       font-size: 20px;
       cursor: pointer;
     }
-  }
+    .t-bar.t-rotate{
+      animation: bar-rotate .5s;
+      -ms-animation: bar-rotate .5s;	
+      -moz-animation: bar-rotate .5s;	
+      -webkit-animation: bar-rotate .5s;
+      -o-animation: bar-rotate .5s;
+      transform:rotate(90deg);
+      -ms-transform:rotate(90deg); 
+      -moz-transform:rotate(90deg); 	
+      -webkit-transform:rotate(90deg);
+      -o-transform:rotate(90deg); 
+    }
 
+    @keyframes bar-rotate
+    {
+        from {transform:rotate(0deg);}
+        to {transform:rotate(90deg);}
+    }
+    @-ms-keyframes bar-rotate
+    {
+        from {transform:rotate(0deg);}
+        to {transform:rotate(90deg);}
+    }
+    @-moz-keyframes bar-rotate
+    {
+        from {transform:rotate(0deg);}
+        to {transform:rotate(90deg);}
+    }
+    @-webkit-keyframes bar-rotate
+    {
+        from {transform:rotate(0deg);}
+        to {transform:rotate(90deg);}
+    }
+    @-o-keyframes bar-rotate
+    {
+        from {transform:rotate(0deg);}
+        to {transform:rotate(90deg);}
+    }
+
+    .t-bar.t-norotate{
+      animation: bar-norotate .5s;
+      -ms-animation: bar-norotate .5s;	
+      -moz-animation: bar-norotate .5s;	
+      -webkit-animation: bar-norotate .5s;
+      -o-animation: bar-norotate .5s;
+      transform:rotate(0deg);
+      -ms-transform:rotate(0deg); 
+      -moz-transform:rotate(0deg); 	
+      -webkit-transform:rotate(0deg);
+      -o-transform:rotate(0deg); 
+    }
+    @keyframes bar-norotate
+    {
+        from {transform:rotate(90deg);}
+        to {transform:rotate(0deg);}
+    }
+    @-ms-keyframes bar-norotate
+    {
+        from {transform:rotate(90deg);}
+        to {transform:rotate(0deg);}
+    }
+    @-moz-keyframes bar-norotate
+    {
+        from {transform:rotate(90deg);}
+        to {transform:rotate(0deg);}
+    }
+    @-webkit-keyframes bar-norotate
+    {
+        from {transform:rotate(90deg);}
+        to {transform:rotate(0deg);}
+    }
+    @-o-keyframes bar-norotate
+    {
+        from {transform:rotate(90deg);}
+        to {transform:rotate(0deg);}
+    }
+  }
   
+}
+
+.t-user-dropdown .t-user-icon{
+  font-size: 15px;
+  margin-right: 5px;
 }
