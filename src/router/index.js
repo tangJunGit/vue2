@@ -1,6 +1,4 @@
 import Vue from 'vue'
-
-// 路由
 import Router from 'vue-router'
 Vue.use(Router)
 
@@ -9,7 +7,7 @@ const login = () => import('../views/common/login.vue')
 const container = () => import('../views/common/container.vue')
 const error404 = () => import('../views/common/error_404.vue')
 
-// demo
+// 在此导入vue文件
 const demoBase = () => import('../views/demo/base.vue')
 
 export default new Router({
@@ -21,14 +19,21 @@ export default new Router({
     },
     {
       path: '/container',
-      name: 'container',
       component: container,
       children: [
+        {
+          path: '/',
+          redirect: '/error/404'
+        },
+
+        // ====  在此添加路由
         {
           path: '/demo/base',
           name: 'demoBase',
           component: demoBase
         }
+
+
       ]
     },
     {

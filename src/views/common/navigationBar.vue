@@ -1,14 +1,14 @@
 <template>
   <div class="t-navigationBar-wrap">
-    <div class="t-logo">
+    <div class="t-logo" @click="collapse">
       <img class="logo" src="../../assets/images/logo.png" alt>
     </div>
     <div class="t-list">
       <el-row>
-        <el-col :span="2">
-          <i class="t-bar fa fa-bars" @click="collapse"></i>
+        <el-col :span="20">
+          <i class="t-bar fa fa-bars"></i>
         </el-col>
-        <el-col :span="22" class="text-right">
+        <el-col :span="4" class="text-right">
           <i class="t-icon el-icon-bell"></i>
           <el-dropdown trigger="click" class="t-item">
             <img class="t-avatar" src="../../assets/images/avatar.jpg" alt>
