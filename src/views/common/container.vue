@@ -1,5 +1,5 @@
 <template>
-  <div class="t-container-wrap">
+  <div style="height: 100%;background: #eaeef3;">
     <el-container class="container">
       <el-header height="60px" class="header">
         <navigationBar :isCollapse.sync="isCollapse"></navigationBar>
@@ -8,7 +8,7 @@
         <el-aside width="auto" class="aside">
           <menuAside :isCollapse="isCollapse"></menuAside>
         </el-aside>
-        <el-main class="t-main-wrap">
+        <el-main class="main">
           <router-view/>
         </el-main>
       </el-container>
@@ -31,5 +31,5 @@ export default {
 }
 </script>
 <style lang="less" scoped>
-@import url("../../assets/less/common/container.less");
+@import url('../../assets/less/common/container.less');
 </style>

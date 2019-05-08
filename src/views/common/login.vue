@@ -1,5 +1,5 @@
 <template>
-  <div class="t-login-wrap">
+  <div class="wrap">
     <div class="login-title">
       <h1><span>前端</span> 管理平台</h1>
     </div>

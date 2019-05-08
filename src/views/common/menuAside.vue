@@ -1,5 +1,5 @@
 <template>
-  <div class="t-menuAside-wrap">
+  <div>
     <!-- 菜单列表 -->
     <el-menu class="menu" :default-active="active" :collapse="isCollapse"
     background-color="rgb(48, 65, 86)" text-color="rgb(191, 203, 217)" active-text-color="rgb(64, 158, 255)">

@@ -1,12 +1,12 @@
 <template>
-  <div class="t-table-wrap">
+  <div>
     <!-- title -->
     <pageBreadcrumb title="一级菜单" :items="['一级菜单','二级菜单']"></pageBreadcrumb>
 
     <!-- card -->
     <el-card class="box-card">
       <!-- filter -->
-      <el-form :inline="true" :model="conditionForm" size="small" class="t-conditionForm">
+      <el-form :inline="true" :model="conditionForm" size="small">
         <el-form-item>
           <el-input v-model="conditionForm.keyword" placeholder="输入关键字">
             <el-button slot="append">查询</el-button>
@@ -22,12 +22,12 @@
       </el-form>
 
       <!-- operate -->
-      <div class="t-operate">
+      <div>
         <el-button type="primary" size="mini" @click="addEdit()">新增</el-button>
       </div>
 
       <!-- table -->
-      <el-table :data="tableData" border size="small" class="t-table">
+      <el-table :data="tableData" border size="small">
         <el-table-column prop="name" label="姓名" header-align="center" align="center"></el-table-column>
         <el-table-column prop="age" label="年龄" header-align="center" align="center"></el-table-column>
         <el-table-column prop="address" label="地址" header-align="center" align="center"></el-table-column>
@@ -41,7 +41,6 @@
 
       <!-- pagination -->
       <el-pagination
-        class="t-pagination"
         small
         background
         @size-change="handleSizeChange"
@@ -58,7 +57,7 @@
   </div>
 </template>
 <script>
-import pageBreadcrumb from "../common/pageBreadcrumb";
+import { pageBreadcrumb } from "../../components";
 import addEdit from "./add-edit";
 export default {
   data () {
