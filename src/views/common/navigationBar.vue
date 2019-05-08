@@ -1,7 +1,7 @@
 <template>
   <div class="t-navigationBar-wrap">
-    <div class="t-logo" @click="collapse">
-      <img class="logo" src="../../assets/images/logo.png" alt>
+    <div class="t-logo">
+      <img class="logo" src="../../assets/images/logo.png" @click="collapse" alt>
     </div>
     <div class="t-list">
       <el-row>

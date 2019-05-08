@@ -33,9 +33,8 @@ export default {
   data () {
     return {
       form: {},
-      isCommit: false,
       rules: {
-        accout: [{ required: true, message: '请输入账号', trigger: 'blur' }],
+        accout: [{ required: true, message: '请输入账号', trigger: 'blur' },{pattern: /^[A-Za-z0-9_]+$/, message: '账号必须是数字、字母、下划线', trigger: 'blur'}],
         password: [{ required: true, message: '请输入密码', trigger: 'blur' }],
         auth: [{ required: true, message: '请输入验证码', trigger: 'blur' }]
       }
@@ -45,9 +44,7 @@ export default {
     // 登录
     login () {
       this.$refs['form'].validate((valid) => {
-        this.isCommit = true
         if (!valid) return
-        this.isCommit = false
 
         this.$router.push({ name: 'demoBase' })
       })
