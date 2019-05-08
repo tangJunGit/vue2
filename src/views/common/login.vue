@@ -46,7 +46,7 @@ export default {
       this.$refs['form'].validate((valid) => {
         if (!valid) return
 
-        this.$router.push({ name: 'demoBase' })
+        this.$router.push({ name: 'demoList' })
       })
     }
   }

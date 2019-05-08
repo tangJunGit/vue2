@@ -1,15 +1,29 @@
 import axios from 'axios'
 
 const request = axios.create({
-  baseURL: '/api',
+  // baseURL: '/api',
   timeout: 1000,
   headers: {
     'Content-Type': 'application/json; charset=utf-8'
   }
 })
 
+
 /**
- * 添加响应拦截器
+ * 请求拦截
+ */
+request.interceptors.request.use(config => {
+    // 对请求数据做点什么
+    return config;
+  }, 
+  error => {
+    // 对请求错误做点什么
+    return Promise.reject(error);
+  }
+);
+
+/**
+ * 响应拦截
  */
 request.interceptors.response.use(
   response => {

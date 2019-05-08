@@ -30,16 +30,9 @@ export default {
     return {
       active: '1-1',
       menuLIst: [
-        {
-          index: '1',
-          label: '一级菜单',
-          icon: 'fa fa-bookmark',
+        { index: '1', label: '一级菜单', icon: 'fa fa-bookmark',
           children: [
-            {
-              index: '1-1',
-              label: '二级菜单',
-              path: '/demo/base'
-            }
+            { index: '1-1', label: '二级菜单', path: '/demo/list' }
           ]
         }
       ]

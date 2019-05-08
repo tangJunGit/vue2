@@ -1,11 +1,9 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from 'vue'
+import Vuex from 'vuex'
 import App from './App'
 import router from './router'
-
-// vuex store filter
-import Vuex from 'vuex'
 import Store from './store'
 import filters from './utils/filter'
 
