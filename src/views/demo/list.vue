@@ -1,8 +1,5 @@
 <template>
   <div>
-    <!-- title -->
-    <pageBreadcrumb title="一级菜单" :items="['一级菜单','二级菜单']"></pageBreadcrumb>
-
     <!-- card -->
     <el-card class="box-card">
       <!-- filter -->
@@ -57,48 +54,20 @@
   </div>
 </template>
 <script>
-import { pageBreadcrumb } from "../../components";
 import addEdit from "./add-edit";
 export default {
   data () {
     return {
       conditionForm: {},
-      tableData: [{
-        id: 1,
-        age: '16',
-        name: '张三',
-        address: '北京'
-      }, {
-        id: 2,
-        age: '18',
-        name: '李四',
-        address: '北京'
-      }, {
-        id: 3,
-        age: '18',
-        name: '张三',
-        address: '成都'
-      }, {
-        id: 4,
-        age: '17',
-        name: '李四',
-        address: '上海'
-      }, {
-        id: 5,
-        age: '19',
-        name: '张三',
-        address: '成都'
-      }, {
-        id: 6,
-        age: '15',
-        name: '李四',
-        address: '上海'
-      }, {
-        id: 7,
-        age: '16',
-        name: '张三',
-        address: '北京'
-      }],
+      tableData: [
+        { id: 1, age: '16', name: '张三', address: '北京' }, 
+        { id: 2, age: '18', name: '李四', address: '成都' }, 
+        { id: 3, age: '19', name: '张三', address: '北京' }, 
+        { id: 4, age: '14', name: '李四', address: '成都' }, 
+        { id: 5, age: '16', name: '张三', address: '北京' }, 
+        { id: 6, age: '19', name: '张三', address: '上海' }, 
+        { id: 7, age: '15', name: '李四', address: '成都' }, 
+      ],
       currentPage: 1,
       pageSize: 10,
       addEditForm: {},
@@ -145,7 +114,6 @@ export default {
     }
   },
   components: {
-    pageBreadcrumb,
     addEdit
   }
 }

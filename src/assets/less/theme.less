@@ -4,9 +4,9 @@
 
 // 配色
 .theme-green{
-    @background-color: rgba(69, 179, 191, 1);    // 主题背景颜色
-    @background-color-hover: rgba(58, 150, 160, 0.5);   // 主题背景颜色hover效果
-    @background-color-title: rgba(58, 150, 160, 1);     // 左边菜单的标题背景颜色
+    @color: rgba(69, 179, 191, 1);    // 主题颜色
+    @color-active: rgba(58, 150, 160, 0.5);   // 主题颜色 hover/active 效果
+    @color-title: rgba(58, 150, 160, 1);     // 左边菜单的标题颜色
 
     .theme-mix();
 }
@@ -19,30 +19,44 @@
             height: @navigationBar-height;
             line-height: @navigationBar-height;
         }
-        background-color: @background-color;
+        background-color: @color;
         .el-tabs__item{
-            background-color: @background-color;
+            background-color: @color;
             &:hover,&.is-active{
-                background-color: @background-color-hover;
+                background-color: @color-active;
             }
         }
     }
+
+
+
     // 左侧菜单
     .menu-aside-theme{
-        background-color: @background-color;
+        background-color: @color;
     }
     .menu-theme{
         .menu-list:not(.el-menu--collapse) {
             width: @menu-width;
         }
         .el-menu{
-            background-color: @background-color;
+            background-color: @color;
         }
         .el-submenu__title:hover, .el-menu-item:focus, .el-menu-item:hover, .el-menu-item.is-active {
-            background-color: @background-color-hover;
+            background-color: @color-active;
         }
         .menu-title{
-            background-color: @background-color-title;
+            background-color: @color-title;
+        }
+    }
+
+
+
+    // 路由切换tab
+    .router-tabs-theme{
+        .el-tabs__header .el-tabs__item{
+            &.is-active,&:not(.is-disabled):hover{
+                color: @color;
+            }
         }
     }
 }

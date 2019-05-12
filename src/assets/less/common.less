@@ -135,6 +135,31 @@ body{
 }
 
 
+//  ================  路由切换tab     =====================
+.t-tabs{
+  .el-tabs{
+    .el-tabs__item{
+      height: 30px;
+      line-height: 30px;
+      font-size: 13px;
+      padding: 0 10px;
+    }
+    &.el-tabs--top{
+      .el-tabs__item:last-child{
+        padding: 0 10px;
+      }
+    }
+    .el-tabs__content{
+      padding: 5px 10px;
+      font-size: 13px;
+      color: #606266;
+    }
+  }
+  .el-tabs__nav-next, .el-tabs__nav-prev{
+    line-height: 30px;
+  }
+}
+
 
 // ============  模态框组件  ==============
 .el-popup-parent--hidden {

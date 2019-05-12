@@ -9,6 +9,7 @@
           <menuAside :isCollapse="isCollapse"></menuAside>
         </el-aside>
         <el-main class="main">
+          <router-tab class="router-tab"></router-tab>
           <router-view/>
         </el-main>
       </el-container>
@@ -16,6 +17,7 @@
   </div>
 </template>
 <script>
+import { routerTab } from "../../components";
 import navigationBar from './navigationBar'
 import menuAside from './menuAside'
 export default {
@@ -25,6 +27,7 @@ export default {
     }
   },
   components: {
+    routerTab,
     navigationBar,
     menuAside
   }

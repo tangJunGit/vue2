@@ -1,6 +1,6 @@
-import pageBreadcrumb from "./pageBreadcrumb.vue";
+import routerTab from "./router-tab.vue";
 
 // 导出组件
 export {
-  pageBreadcrumb
+  routerTab
 }
