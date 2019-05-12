@@ -10,6 +10,7 @@ import filters from './utils/filter'
 // css
 import './assets/css/normalize.css'
 import './assets/less/common.less'
+import './assets/less/theme.less'
 import './assets/font-awesome-4.7.0/css/font-awesome.min.css';
 
 // ElementUI

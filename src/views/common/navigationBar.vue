@@ -1,27 +1,29 @@
 <template>
-  <div style="width: 100%;display: table;">
+  <div class="t-navigationBar navigationBar-theme" style="height: 100%;position:relative;">
     <div class="logo">
-      <img src="../../assets/images/logo.png" @click="collapse" alt>
+      <img src="../../assets/images/logo.png" alt>
+      <span>校园管理平台</span>
     </div>
     <div class="list">
-      <el-row>
-        <el-col :span="2">
-          <i class="bar fa fa-bars"></i>
-        </el-col>
-        <el-col :span="22" class="text-right">
-          <el-tooltip class="item" effect="dark" content="消息" placement="bottom">
-            <i class="icon el-icon-bell"></i>
-          </el-tooltip>
-          <el-dropdown trigger="click" class="item">
-            <img class="avatar" src="../../assets/images/avatar.jpg" alt>
-            <span class="user">admin</span>
-            <el-dropdown-menu slot="dropdown" class="user-dropdown">
-              <el-dropdown-item><i class="user-icon fa fa-info-circle"></i>个人信息</el-dropdown-item>
-              <el-dropdown-item><i class="user-icon fa fa-sign-out"></i>退出</el-dropdown-item>
-            </el-dropdown-menu>
-          </el-dropdown>
-        </el-col>
-      </el-row> 
+      <el-tabs class="t-module-wrap" v-model="activeModule">
+        <el-tab-pane label="学校管理" name="1"></el-tab-pane>
+        <el-tab-pane label="教务管理" name="2"></el-tab-pane>
+        <el-tab-pane label="教职工管理" name="3"></el-tab-pane>
+        <el-tab-pane label="行政办公" name="4"></el-tab-pane>
+      </el-tabs>
+      <div class="item-wrap">
+        <div class="item">
+          <i class="icon fa fa-volume-up"></i>
+          <span class="border-right">(<span class="small">12</span>)</span>
+        </div>
+        <div class="item">
+          <span>admin</span>
+          <span class="border-right">(<span class="small">超级管理员</span>)</span>
+        </div>
+        <div class="item">
+          <span>退出</span>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -31,6 +33,11 @@ export default {
     isCollapse: {
       type: Boolean,
       default: false
+    }
+  },
+  data() {
+    return {
+      activeModule: '2'
     }
   },
   methods:{

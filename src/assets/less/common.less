@@ -56,9 +56,7 @@ body{
   display: inline-block;
 }
 
-// ================  组件类  =====================
-
-// 登录界面
+// ================== 登录界面  =============
 .t-login-wrap {
   .el-form-item{
     border: 1px solid rgba(255,255,255,.1);
@@ -93,7 +91,52 @@ body{
   }
 }
 
-// 模态框组件
+// ===============  顶部导航条  ==================
+.t-navigationBar{
+  // 模块列表
+  .t-module-wrap{
+    .el-tabs__header .el-tabs__item, .el-tabs__nav-next, .el-tabs__nav-prev{
+      color: #fff;
+    }
+    .el-tabs__header{
+      margin: 0;
+      .el-tabs__item{
+        font-size: 16px;
+        &:nth-child(2){
+          padding-left: 20px;
+        }
+        &:last-child {
+          padding-right: 20px;
+        }
+      }
+    }
+    .el-tabs__content, .el-tabs__active-bar{
+      display: none;
+    }
+    .el-tabs__nav-wrap{
+      margin-bottom: 0;
+      &::after{
+        height: 0;
+      }
+    }
+  }
+}
+
+
+// ===============  左侧菜单  ==================
+.t-menu-wrap{
+  .el-menu-item, .el-submenu__title, .el-submenu .el-menu-item{
+    height: 40px;
+    line-height: 40px;
+  }
+  .el-submenu__title,.el-submenu__title i, .el-menu-item, .el-menu-item.is-active{
+    color: #fff;
+  }
+}
+
+
+
+// ============  模态框组件  ==============
 .el-popup-parent--hidden {
   overflow-y: hidden;
 }

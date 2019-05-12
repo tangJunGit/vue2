@@ -1,7 +1,7 @@
 <template>
   <div class="wrap">
     <div class="login-title">
-      <h1><span>前端</span> 管理平台</h1>
+      <h1><span>校园</span> 管理平台</h1>
     </div>
     <div class="login-section">
       <el-form ref="form" :rules="rules" :model="form">
@@ -18,7 +18,7 @@
         <el-form-item prop="auth">
           <el-input v-model="form.auth" placeholder="请输入验证码">
             <template slot="prepend"><i class="fa fa-random"></i></template>
-            <template slot="append"><img src="../../assets/images/auth_code.jpg" alt=""></template>
+            <template slot="append"><img class="qr-code" src="../../assets/images/auth_code.jpg" alt=""></template>
           </el-input>
         </el-form-item>
         <el-form-item>

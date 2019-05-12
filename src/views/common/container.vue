@@ -1,11 +1,11 @@
 <template>
   <div style="height: 100%;background: #eaeef3;">
     <el-container class="container">
-      <el-header height="60px" class="header">
+      <el-header height="auto" class="header">
         <navigationBar :isCollapse.sync="isCollapse"></navigationBar>
       </el-header>
       <el-container>
-        <el-aside width="auto" class="aside">
+        <el-aside width="auto" class="menu-aside-theme aside">
           <menuAside :isCollapse="isCollapse"></menuAside>
         </el-aside>
         <el-main class="main">

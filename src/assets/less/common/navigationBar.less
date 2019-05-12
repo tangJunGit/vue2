@@ -1,121 +1,41 @@
+// logo
 .logo{
-  display: table-cell;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 200px;
-  height: 100%;
   text-align: center;
-  background-color: rgb(48, 65, 86);
+  font-size: 18px;
+  color: #fff;
+  cursor: pointer;
   img {
     height: 40px;
     vertical-align: middle;
-    cursor: pointer;
   }
 }
 
+// 模块列表
 .list{
-  padding-right: 20px;
-  .item {
-    margin-left: 10px;
-    cursor: pointer;
+  margin-left: 200px;
+  color: #fff;
+  .item-wrap{
+    position: absolute;
+    top: 0;
+    right: 20px;
+    text-align: right;
+    .item {
+      display: inline-block;
+      margin-left: 5px;
+      font-size: 14px;
+      cursor: pointer;
+      .small{
+        font-size: 13px;
+      }
+    }
+    .border-right{
+      padding-right: 5px;
+      border-right: 1px solid #fff;
+    }
   }
-  .icon{
-    font-size: 20px;
-    vertical-align: middle;
-    cursor: pointer;
-  }
-  .avatar {
-    height: 35px;
-    width: 35px;
-    vertical-align: middle;
-    border-radius: 50%;
-  }
-  .user{
-    font-weight: 900;
-    font-size: 15px;
-  }
-  .bar{
-    margin-left: 20px;
-    font-size: 20px;
-    cursor: pointer;
-  }
-  .bar.rotate{
-    animation: bar-rotate .5s;
-    -ms-animation: bar-rotate .5s;	
-    -moz-animation: bar-rotate .5s;	
-    -webkit-animation: bar-rotate .5s;
-    -o-animation: bar-rotate .5s;
-    transform:rotate(90deg);
-    -ms-transform:rotate(90deg); 
-    -moz-transform:rotate(90deg); 	
-    -webkit-transform:rotate(90deg);
-    -o-transform:rotate(90deg); 
-  }
-
-  @keyframes bar-rotate
-  {
-      from {transform:rotate(0deg);}
-      to {transform:rotate(90deg);}
-  }
-  @-ms-keyframes bar-rotate
-  {
-      from {transform:rotate(0deg);}
-      to {transform:rotate(90deg);}
-  }
-  @-moz-keyframes bar-rotate
-  {
-      from {transform:rotate(0deg);}
-      to {transform:rotate(90deg);}
-  }
-  @-webkit-keyframes bar-rotate
-  {
-      from {transform:rotate(0deg);}
-      to {transform:rotate(90deg);}
-  }
-  @-o-keyframes bar-rotate
-  {
-      from {transform:rotate(0deg);}
-      to {transform:rotate(90deg);}
-  }
-
-  .bar.norotate{
-    animation: bar-norotate .5s;
-    -ms-animation: bar-norotate .5s;	
-    -moz-animation: bar-norotate .5s;	
-    -webkit-animation: bar-norotate .5s;
-    -o-animation: bar-norotate .5s;
-    transform:rotate(0deg);
-    -ms-transform:rotate(0deg); 
-    -moz-transform:rotate(0deg); 	
-    -webkit-transform:rotate(0deg);
-    -o-transform:rotate(0deg); 
-  }
-  @keyframes bar-norotate
-  {
-      from {transform:rotate(90deg);}
-      to {transform:rotate(0deg);}
-  }
-  @-ms-keyframes bar-norotate
-  {
-      from {transform:rotate(90deg);}
-      to {transform:rotate(0deg);}
-  }
-  @-moz-keyframes bar-norotate
-  {
-      from {transform:rotate(90deg);}
-      to {transform:rotate(0deg);}
-  }
-  @-webkit-keyframes bar-norotate
-  {
-      from {transform:rotate(90deg);}
-      to {transform:rotate(0deg);}
-  }
-  @-o-keyframes bar-norotate
-  {
-      from {transform:rotate(90deg);}
-      to {transform:rotate(0deg);}
-  }
-}
-
-.user-dropdown .user-icon{
-  font-size: 15px;
-  margin-right: 5px;
+  
 }
