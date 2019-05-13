@@ -21,7 +21,7 @@
           <span class="border-right">(<span class="small">超级管理员</span>)</span>
         </div>
         <div class="item">
-          <span>退出</span>
+          <span @click="exit">退出</span>
         </div>
       </div>
     </div>
@@ -43,6 +43,9 @@ export default {
   methods:{
     collapse(){
       this.$emit('update:isCollapse', !this.isCollapse);
+    },
+    exit(){
+      this.$router.push({name: 'login'});
     }
   }
 }

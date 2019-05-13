@@ -3,13 +3,13 @@
     <el-container class="container">
       <el-header height="auto" class="header">
         <navigationBar :isCollapse.sync="isCollapse"></navigationBar>
+        <router-tab></router-tab>
       </el-header>
       <el-container>
         <el-aside width="auto" class="menu-aside-theme aside">
           <menuAside :isCollapse="isCollapse"></menuAside>
         </el-aside>
         <el-main class="main">
-          <router-tab class="router-tab"></router-tab>
           <router-view/>
         </el-main>
       </el-container>

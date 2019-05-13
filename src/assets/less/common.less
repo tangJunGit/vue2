@@ -137,11 +137,14 @@ body{
 
 //  ================  路由切换tab     =====================
 .t-tabs{
+  position: absolute;
+  right: 0;
+  z-index: 99;
   .el-tabs{
     .el-tabs__item{
       height: 30px;
       line-height: 30px;
-      font-size: 13px;
+      font-size: 12px;
       padding: 0 10px;
     }
     &.el-tabs--top{
@@ -151,8 +154,15 @@ body{
     }
     .el-tabs__content{
       padding: 5px 10px;
-      font-size: 13px;
+      font-size: 12px;
       color: #606266;
+    }
+    .t-breadcrumb{
+      display: inline-block;
+      .el-breadcrumb__item{
+        font-size: 12px;
+        color: #606266;
+      }
     }
   }
   .el-tabs__nav-next, .el-tabs__nav-prev{

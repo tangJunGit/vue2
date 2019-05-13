@@ -34,7 +34,9 @@ export default {
       menuLIst: [
         { index: '1', label: '学生管理',
           children: [
-            { index: '1-1', label: '学生信息', path: '/demo/list' }
+            { index: '1-1', label: '学生信息', path: '/demo/list' },
+            { index: '1-2', label: 'test_1', path: '/demo/test_1' },
+            { index: '1-3', label: 'test_2', path: '/demo/test_2' }
           ]
         }
       ]
