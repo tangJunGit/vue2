@@ -7,11 +7,11 @@ const state = {
 
 const mutations = {
     // 添加tabs
-    [ROUTER_TAB.ADD] (state, data) {
+    [ROUTER_TAB.ROUTER_ADD] (state, data) {
         state.openTab.push(data);
     },
     // 删除tabs
-    [ROUTER_TAB.DELETE] (state, path) {
+    [ROUTER_TAB.ROUTER_DELETE] (state, path) {
         let index = 0;
         for (let option of state.openTab) {
             if (option.path === path) {
@@ -22,11 +22,11 @@ const mutations = {
         state.openTab.splice(index, 1);
     },
     // 清空tabs
-    [ROUTER_TAB.CLEAR] (state) {
+    [ROUTER_TAB.ROUTER_CLEAR] (state) {
         state.openTab = [];
     },
     // 设置当前激活的tab
-    [ROUTER_TAB.SET_ACTICE_INDEX] (state, index) {
+    [ROUTER_TAB.SET_ACTICE_ROUTER_INDEX] (state, index) {
         state.activeIndex = index;
     },
 }

@@ -29,6 +29,7 @@
   </div>
 </template>
 <script>
+import { MENU_LIST } from "../../store/mutations.js";
 export default {
   data () {
     return {

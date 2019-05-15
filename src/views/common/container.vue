@@ -17,7 +17,7 @@
   </div>
 </template>
 <script>
-import { routerTab } from "../../components";
+import routerTab from "./router-tab";
 import navigationBar from './navigationBar'
 import menuAside from './menuAside'
 export default {

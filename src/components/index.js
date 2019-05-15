@@ -1,6 +1,6 @@
-import routerTab from "./router-tab.vue";
+import MenuTree from "./menu-tree.vue";
 
 // 导出组件
 export {
-  routerTab
+    MenuTree
 }

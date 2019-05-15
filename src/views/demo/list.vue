@@ -24,11 +24,11 @@
       </div>
 
       <!-- table -->
-      <el-table :data="tableData" border size="small">
-        <el-table-column prop="name" label="姓名" header-align="center" align="center"></el-table-column>
-        <el-table-column prop="age" label="年龄" header-align="center" align="center"></el-table-column>
-        <el-table-column prop="address" label="地址" header-align="center" align="center"></el-table-column>
-        <el-table-column fixed="right" label="操作" header-align="center" align="center">
+      <el-table :data="tableData" border stripe size="small" tooltip-effect="dark">
+        <el-table-column prop="name" label="姓名" :show-overflow-tooltip="true" header-align="center" align="center"></el-table-column>
+        <el-table-column prop="age" label="年龄" :show-overflow-tooltip="true" header-align="center" align="center"></el-table-column>
+        <el-table-column prop="address" label="地址" :show-overflow-tooltip="true" header-align="center" align="center"></el-table-column>
+        <el-table-column fixed="right" label="操作" width="100" header-align="center" align="center">
           <template slot-scope="scope">
             <el-button type="text" size="small" @click="addEdit(scope.row)">编辑</el-button>
             <el-button type="text" size="small" @click="del(scope.row)">删除</el-button>

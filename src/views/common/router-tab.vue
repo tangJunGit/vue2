@@ -11,12 +11,12 @@
   </div>
 </template>
 <script>
-import { ROUTER_TAB } from "../store/mutations.js";
+import { ROUTER_TAB } from "../../store/mutations.js";
 export default {
   data(){
     return{}
   },
-  mounted () {
+  created() {
     // 刷新时以当前路由做为 tab 加入tabs
     this.routerAdd(this.$route);
     this.activeIndex = this.$route.path;
@@ -40,10 +40,10 @@ export default {
       }
     },
     routerAdd(route){
-      this.$store.commit(ROUTER_TAB.ADD, {path: route.path , name: route.name, meta: route.meta });
+      this.$store.commit(ROUTER_TAB.ROUTER_ADD, {path: route.path , name: route.name, meta: route.meta });
     },
     routerRemove(path){
-      this.$store.commit(ROUTER_TAB.DELETE, path);
+      this.$store.commit(ROUTER_TAB.ROUTER_DELETE, path);
     },
   },
   watch:{
@@ -75,13 +75,13 @@ export default {
         return this.$store.state.routerTab.activeIndex;
       },
       set (val) {
-        this.$store.commit(ROUTER_TAB.SET_ACTICE_INDEX, val);
+        this.$store.commit(ROUTER_TAB.SET_ACTICE_ROUTER_INDEX, val);
       }
     }
   },
   destroyed(){
-    this.$store.commit(ROUTER_TAB.SET_ACTICE_INDEX, '');
-    this.$store.commit(ROUTER_TAB.CLEAR);
+    this.$store.commit(ROUTER_TAB.SET_ACTICE_ROUTER_INDEX, '');
+    this.$store.commit(ROUTER_TAB.ROUTER_CLEAR);
   }
 }
 </script>

@@ -5,11 +5,8 @@
       <span>校园管理平台</span>
     </div>
     <div class="list">
-      <el-tabs class="t-module-wrap" v-model="activeModule">
-        <el-tab-pane label="学校管理" name="1"></el-tab-pane>
-        <el-tab-pane label="教务管理" name="2"></el-tab-pane>
-        <el-tab-pane label="教职工管理" name="3"></el-tab-pane>
-        <el-tab-pane label="行政办公" name="4"></el-tab-pane>
+      <el-tabs class="t-module-wrap" v-model="activeModuleName">
+        <el-tab-pane v-for="(item, index) in modules" :key="index" :label="item" :name="item"></el-tab-pane>
       </el-tabs>
       <div class="item-wrap">
         <div class="item">
@@ -28,6 +25,7 @@
   </div>
 </template>
 <script>
+import { MENU_LIST } from "../../store/mutations.js";
 export default {
   props:{
     isCollapse: {
@@ -36,9 +34,10 @@ export default {
     }
   },
   data() {
-    return {
-      activeModule: '2'
-    }
+    return { }
+  },
+  created(){
+    this.activeModuleName = '教务管理';   // 默认显示模块
   },
   methods:{
     collapse(){
@@ -47,7 +46,21 @@ export default {
     exit(){
       this.$router.push({name: 'login'});
     }
-  }
+  },
+  computed: {
+    modules() {
+      return this.$store.getters.modules; 
+    },
+    activeModuleName: {
+      get () {
+        return this.$store.state.menuList.activeModuleName;
+      },
+      set (val) {
+        this.$store.commit(MENU_LIST.SET_ACTICE_MENU_INDEX, '-1');   //切换模块后，清除菜单index === -1
+        this.$store.commit(MENU_LIST.SET_ACTICE_MODULE_NAME, val);
+      }
+    }
+  },
 }
 </script>
 <style lang="less" scoped>

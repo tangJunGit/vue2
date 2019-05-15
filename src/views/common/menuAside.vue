@@ -1,26 +1,20 @@
 <template>
-  <div class="menu-theme t-menu-wrap">
+  <div class="menu-theme t-menu-wrap text-nowrap">
     <div class="menu-title">
       <i class="fa fa-bookmark"></i>
-      <span>教务管理</span>
+      <span>{{moduleName}}</span>
     </div>
     <!-- 菜单列表 -->
-    <el-menu class="menu-list" :default-active="active" :collapse="isCollapse">
-      <el-submenu v-for="item in menuLIst" :key="item.index" :index="item.index">
-        <template slot="title">
-          <span>{{item.label}}</span>
-        </template>
-        <el-menu-item
-           v-for="child in item.children"
-          :key="child.index"
-          :index="child.index"
-          @click="goto(child.path)"
-        >{{child.label}}</el-menu-item>
-      </el-submenu>
-    </el-menu>
+    <div v-if="loading">
+      <el-menu class="menu-list" :default-active="activeMenu" :collapse="isCollapse">
+        <MenuTree :menuLIst="menuLIst" @clickMenuItem="clickMenuItem"></MenuTree>
+      </el-menu>
+    </div>
   </div>
 </template>
 <script>
+import { MenuTree } from "../../components";
+import { MENU_LIST } from "../../store/mutations.js";
 export default {
   props:{
     isCollapse: {
@@ -28,24 +22,50 @@ export default {
       default: false
     }
   },
-  data () {
+  data(){
     return {
-      active: '1-1',
-      menuLIst: [
-        { index: '1', label: '学生管理',
-          children: [
-            { index: '1-1', label: '学生信息', path: '/demo/list' },
-            { index: '1-2', label: 'test_1', path: '/demo/test_1' },
-            { index: '1-3', label: 'test_2', path: '/demo/test_2' }
-          ]
-        }
-      ]
+      loading: true
     }
   },
+  created(){
+    this.activeMenu = '1-1';
+  },
   methods: {
-    goto (path) {
-      this.$router.push(path)
+    // 点击菜单的跳转，改变菜单index值
+    clickMenuItem(menuItem){
+      this.activeMenu = menuItem.index;
+      this.$router.push(menuItem.path);
     }
+  },
+  watch:{
+    activeMenu(newVal){
+      // 当切换模块时，菜单index === '-1'，重新渲染菜单列表
+      if(newVal === '-1'){
+        this.loading = false;
+        this.$nextTick(() => {
+          this.loading = true;
+        })
+      }
+    }
+  },
+  computed: {
+    moduleName() {
+      return this.$store.state.menuList.activeModuleName; 
+    },
+    menuLIst(){
+      return this.$store.getters.menuList; 
+    },
+    activeMenu: {
+      get () {
+        return this.$store.state.menuList.activeMenuIndex;
+      },
+      set (val) {
+        this.$store.commit(MENU_LIST.SET_ACTICE_MENU_INDEX, val);
+      }
+    }
+  },
+  components: {
+    MenuTree
   }
 }
 </script>
