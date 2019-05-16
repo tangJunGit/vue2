@@ -33,12 +33,6 @@ export default {
       default: false
     }
   },
-  data() {
-    return { }
-  },
-  created(){
-    this.activeModuleName = '教务管理';   // 默认显示模块
-  },
   methods:{
     collapse(){
       this.$emit('update:isCollapse', !this.isCollapse);

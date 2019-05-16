@@ -6,7 +6,7 @@
     </div>
     <!-- 菜单列表 -->
     <div v-if="loading">
-      <el-menu class="menu-list" :default-active="activeMenu" :collapse="isCollapse">
+      <el-menu class="menu-list" :default-active="activeMenuIndex" :collapse="isCollapse">
         <MenuTree :menuLIst="menuLIst" @clickMenuItem="clickMenuItem"></MenuTree>
       </el-menu>
     </div>
@@ -28,18 +28,21 @@ export default {
     }
   },
   created(){
-    this.activeMenu = '1-1';
+    // 刷新页面，通过路由(meta > title)设置模块名与菜单名
+    let routeMeta = this.$route.meta;
+    this.moduleName = routeMeta.title[0];   // 当前模块名
+    this.activeMenuName = routeMeta.title[routeMeta.title.length - 1];   // 当前菜单名
   },
   methods: {
     // 点击菜单的跳转，改变菜单index值
     clickMenuItem(menuItem){
-      this.activeMenu = menuItem.index;
+      this.activeMenuIndex = menuItem.index;
       this.$router.push(menuItem.path);
     }
   },
   watch:{
-    activeMenu(newVal){
-      // 当切换模块时，菜单index === '-1'，重新渲染菜单列表
+    // 当切换模块时，菜单index === '-1'，重新渲染菜单列表
+    activeMenuIndex(newVal){
       if(newVal === '-1'){
         this.loading = false;
         this.$nextTick(() => {
@@ -49,18 +52,31 @@ export default {
     }
   },
   computed: {
-    moduleName() {
-      return this.$store.state.menuList.activeModuleName; 
+    moduleName: {
+      get() {
+        return this.$store.state.menuList.activeModuleName;
+      },
+      set(val) {
+        this.$store.commit(MENU_LIST.SET_ACTICE_MODULE_NAME, val);
+      }
     },
     menuLIst(){
       return this.$store.getters.menuList; 
     },
-    activeMenu: {
+    activeMenuIndex: {
       get () {
         return this.$store.state.menuList.activeMenuIndex;
       },
       set (val) {
         this.$store.commit(MENU_LIST.SET_ACTICE_MENU_INDEX, val);
+      }
+    },
+    activeMenuName: {
+      get () {
+        return this.$store.state.menuList.activeMenuName;
+      },
+      set (val) {
+        this.$store.commit(MENU_LIST.SET_ACTICE_MENU_NAME, val);
       }
     }
   },

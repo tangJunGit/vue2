@@ -12,15 +12,19 @@ export default new Router({
         { path: '/', redirect: '/error/404' },
         { 
           path: '/demo/list', name: 'demoList', component: _import('demo/list'), 
-          meta: {title: '学校信息', location: ['教务管理', '学校管理', '学校信息']}      // title 为路由tab的标题，location表示位置
+          meta: {title: ['学校管理', '学生管理', '学生信息']}      // title 表示菜单位置，需要自定义
+        },
+        { 
+          path: '/demo/add', name: 'demoAdd', component: _import('demo/add'), 
+          meta: {title: ['学校管理', '学生管理', '添加学生']} 
         },
         { 
           path: '/demo/test_1', name: 'test_1', component: _import('demo/test_1'), 
-          meta: {title: '测试1', location: ['测试1', '测试2']} 
+          meta: {title: ['学校管理', '班级管理']} 
         },
         { 
           path: '/demo/test_2', name: 'test_2', component: _import('demo/test_2'), 
-          meta: {title: '测试2', location: ['测试1', '测试2']}
+          meta: {title: ['教务管理', '学年学期']}
         },
       ]
     },

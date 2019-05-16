@@ -1,5 +1,5 @@
 <template>
     <div>
-        班级管理
+        添加学生
     </div>
 </template>

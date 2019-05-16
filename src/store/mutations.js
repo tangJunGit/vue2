@@ -12,5 +12,6 @@ export const ROUTER_TAB = {
 export const MENU_LIST = {
   SET_ACTICE_MODULE_NAME: 'set_active_module_name',
   SET_ACTICE_MENU_INDEX: 'set_active_menu_index',
+  SET_ACTICE_MENU_NAME: 'set_active_menu_name',
 }
 

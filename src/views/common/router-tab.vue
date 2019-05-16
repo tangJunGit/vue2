@@ -1,10 +1,10 @@
 <template>
   <div class="router-tabs-theme t-tabs">
     <el-tabs v-model="activeIndex" v-if="openTab.length" type="border-card" closable @tab-click='tabClick' @tab-remove='tabRemove'>
-      <el-tab-pane :key="item.name" v-for="(item) in openTab" :label="item.meta.title" :name="item.path">
+      <el-tab-pane :key="item.name" v-for="(item) in openTab" :label="item.meta.title[item.meta.title.length-1]" :name="item.path">
         <span>当前位置：</span>
         <el-breadcrumb separator=">" class="t-breadcrumb">
-          <el-breadcrumb-item v-for="(item, index) in item.meta.location" :key="index">{{item}}</el-breadcrumb-item>
+          <el-breadcrumb-item v-for="(item, index) in item.meta.title" :key="index">{{item}}</el-breadcrumb-item>
         </el-breadcrumb>
       </el-tab-pane>
     </el-tabs>
@@ -13,9 +13,6 @@
 <script>
 import { ROUTER_TAB } from "../../store/mutations.js";
 export default {
-  data(){
-    return{}
-  },
   created() {
     // 刷新时以当前路由做为 tab 加入tabs
     this.routerAdd(this.$route);
@@ -48,6 +45,8 @@ export default {
   },
   watch:{
     '$route'(to,from){
+      console.log(this.$router);
+      
         // flag 判断路由是否已经tab打开
         let flag = false;
         for(let item of this.openTab){

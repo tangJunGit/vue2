@@ -1,8 +1,8 @@
 import { ROUTER_TAB } from '../mutations'
 
 const state = {
-    openTab:[],             //所有打开的路由
-    activeIndex: ''     //激活状态
+    openTab:[],             //所有打开的路由 - openTab 为 router对象的数组
+    activeIndex: ''     // 激活状态 - activeIndex 为 path 路径
 }
 
 const mutations = {

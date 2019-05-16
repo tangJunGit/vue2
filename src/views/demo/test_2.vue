@@ -1,5 +1,5 @@
 <template>
     <div>
-        test2
+        学年学期
     </div>
 </template>
