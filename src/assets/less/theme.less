@@ -13,6 +13,12 @@
 }
 
 .theme-mix(){
+    // ====================  登录界面
+    .login-title-theme{
+        color: @color;
+    }
+
+
     // ====================  顶部导航条
     .navigationBar-theme{
         .logo, .item-wrap .item, 
@@ -57,24 +63,80 @@
     .router-tabs-theme{
         top: @navigationBar-height;
         left: @menu-width;
-        .el-tabs__header .el-tabs__item{
-            &.is-active,&:not(.is-disabled):hover{
-                color: @color;
-            }
-        }
     }
 
     
 
     // ====================  element-ui组件
-    .el-button--theme{
-        color: #fff;
-        background-color: @color;
+    .el-button--default:focus, .el-button--default:hover, .el-button--default:active {
+        color: @color;
         border-color: @color;
     }
-    .el-button--theme:focus, .el-button--theme:hover{
-        background: @color-hover;
+    .el-button--primary, .el-radio__input.is-checked .el-radio__inner,
+    .el-radio-button__orig-radio:checked+.el-radio-button__inner,
+    .el-checkbox__input.is-checked .el-checkbox__inner, .el-checkbox__input.is-indeterminate .el-checkbox__inner,
+    .el-switch.is-checked .el-switch__core{
+        border-color: @color;
+        background-color: @color;
+    }
+    .el-button--primary:focus, .el-button--primary:hover{
         border-color: @color-hover;
+        background: @color-hover;
+    }
+    .el-button--text, .el-radio__input.is-checked+.el-radio__label, 
+    .el-checkbox.is-bordered.is-checked, .el-checkbox__input.is-checked+.el-checkbox__label,
+    .el-tag, .el-tabs__item.is-active, .el-tabs--border-card>.el-tabs__header .el-tabs__item.is-active,
+    .el-step__head.is-finish, .el-step__title.is-finish, .el-step__description.is-finish{
+        color: @color;
+    }
+    .el-button--text:focus, .el-button--text:hover, .el-tabs__item:hover,
+    .el-pager li:hover, .el-pagination.is-background .el-pager li:not(.disabled):hover,
+    .el-tabs--border-card>.el-tabs__header .el-tabs__item:not(.is-disabled):hover,
+    .el-breadcrumb__inner a:hover, .el-breadcrumb__inner.is-link:hover,
+    .el-input-number__decrease:hover, .el-input-number__increase:hover,
+    .el-transfer-panel__item:hover, .el-radio-button__inner:hover{
+        color: @color-hover;
+    }
+    .el-pagination.is-background .el-slider__bar, .el-progress-bar__inner,
+    .el-badge__content, .el-tabs__active-bar, .el-pager li:not(.disabled).active{
+        background-color: @color;
+    }
+    .el-form-item.is-error .el-input__inner, .el-form-item.is-error .el-textarea__inner, 
+    .el-message-box__input input.invalid, .el-input.is-active .el-input__inner, 
+    .el-select .el-input.is-focus .el-input__inner,.el-checkbox.is-bordered.is-checked,
+    .el-textarea__inner:focus, .el-slider__button, .el-step__icon.is-text{
+        border-color: @color;
+    }
+    .el-form-item.is-error .el-input__inner:focus, .el-form-item.is-error .el-textarea__inner:focus, 
+    .el-message-box__input input.invalid:focus, .el-input__inner:focus, 
+    .el-pagination__sizes .el-input .el-input__inner:hover, .el-checkbox__inner:hover, .el-radio__inner:hover{
+        border-color: @color-hover;
+    }
+    .el-pagination.is-background .el-pager li:not(.disabled).active,
+    .el-radio-button__orig-radio:checked+.el-radio-button__inner{
         color: #fff;
+    }
+    .el-input-group__append button.el-button, .el-input-group__append div.el-select .el-input__inner, 
+    .el-input-group__append div.el-select:hover .el-input__inner, .el-input-group__prepend button.el-button, 
+    .el-input-group__prepend div.el-select .el-input__inner, .el-input-group__prepend div.el-select:hover .el-input__inner {
+        border-color: transparent;
+        background-color: transparent;
+        color: inherit;
+    }
+    .el-radio-button:focus:not(.is-focus):not(:active):not(.is-disabled){
+        box-shadow: 0 0 2px 2px @color-hover;
+    }
+    .el-radio-button__orig-radio:checked+.el-radio-button__inner{
+        box-shadow: 0px 0 0 0 @color;
+    }
+    .el-cascader__label:focus,.el-input-number__decrease:focus, .el-input-number__increase:focus, 
+    .el-breadcrumb__inner a, .el-breadcrumb__inner.is-link{
+        outline-color: @color-hover;
+    }
+    .el-loading-spinner .path{
+        stroke: @color;
+    }
+    .el-menu--horizontal>.el-menu-item.is-active{
+        border-bottom-color: @color-hover;
     }
 }

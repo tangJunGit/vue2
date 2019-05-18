@@ -45,8 +45,6 @@ export default {
   },
   watch:{
     '$route'(to,from){
-      console.log(this.$router);
-      
         // flag 判断路由是否已经tab打开
         let flag = false;
         for(let item of this.openTab){

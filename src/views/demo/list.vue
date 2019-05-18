@@ -24,8 +24,8 @@
         <span>学生列表</span>
         <!-- 操作按钮 -->
         <div class="t-operate-buttons">
-          <el-button type="theme" size="mini">导入</el-button>
-          <el-button type="theme" size="mini" @click="addEdit()">新增</el-button>
+          <el-button type="primary" size="mini">导入</el-button>
+          <el-button type="primary" size="mini" @click="addEdit()">新增</el-button>
         </div>
       </div>
 
@@ -49,7 +49,7 @@
         <!-- 批量操作 -->
         <div class="t-batch-operate">
           <el-checkbox v-model="isSelectAll" class="t-select-all" @change="selectAll()">全选</el-checkbox>
-          <el-button type="theme" size="mini" :disabled="!this.multipleSelection.length">删除</el-button>
+          <el-button type="primary" size="mini" :disabled="!this.multipleSelection.length">删除</el-button>
         </div>
 
         <!-- 分页 -->
@@ -110,7 +110,6 @@ export default {
       this.addEditVisible = true;
     },
     addEditSave (form) {
-      console.log(form)
       this.$message.success('保存成功');
     },
     /**
