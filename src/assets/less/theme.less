@@ -5,14 +5,15 @@
 // 配色
 .theme-green{
     @color: rgba(69, 179, 191, 1);    // 主题颜色
-    @color-active: rgba(58, 150, 160, 0.5);   // 主题颜色 hover/active 效果
+    @color-hover: rgba(69, 179, 191, 0.9);   // 主题颜色 hover/active 效果     (用于按钮等)
+    @color-nav-active: rgba(58, 150, 160, 0.5);   // 主题颜色 hover/active 效果  (用于菜单等)
     @color-title: rgba(58, 150, 160, 1);     // 左边菜单的标题颜色
 
     .theme-mix();
 }
 
 .theme-mix(){
-    // 顶部导航条
+    // ====================  顶部导航条
     .navigationBar-theme{
         .logo, .item-wrap .item, 
         .el-tabs__item, .el-tabs__nav-next, .el-tabs__nav-prev{
@@ -23,14 +24,14 @@
         .el-tabs__item{
             background-color: @color;
             &:hover,&.is-active{
-                background-color: @color-active;
+                background-color: @color-nav-active;
             }
         }
     }
 
 
 
-    // 左侧菜单
+    // ====================  左侧菜单
     .menu-aside-theme{
         background-color: @color;
     }
@@ -43,7 +44,7 @@
             background-color: @color;
         }
         .el-submenu__title:hover, .el-menu-item:focus, .el-menu-item:hover, .el-menu-item.is-active {
-            background-color: @color-active;
+            background-color: @color-nav-active;
         }
         .menu-title{
             background-color: @color-title;
@@ -52,7 +53,7 @@
 
 
 
-    // 路由切换tab
+    // ===================  路由切换tab
     .router-tabs-theme{
         top: @navigationBar-height;
         left: @menu-width;
@@ -61,5 +62,19 @@
                 color: @color;
             }
         }
+    }
+
+    
+
+    // ====================  element-ui组件
+    .el-button--theme{
+        color: #fff;
+        background-color: @color;
+        border-color: @color;
+    }
+    .el-button--theme:focus, .el-button--theme:hover{
+        background: @color-hover;
+        border-color: @color-hover;
+        color: #fff;
     }
 }

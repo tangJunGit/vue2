@@ -7,15 +7,15 @@ import router from './router'
 import Store from './store'
 import filters from './utils/filter'
 
+// ElementUI
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-chalk/index.css'
+
 // css
 import './assets/css/normalize.css'
 import './assets/less/common.less'
 import './assets/less/theme.less'
 import './assets/font-awesome-4.7.0/css/font-awesome.min.css';
-
-// ElementUI
-import ElementUI from 'element-ui'
-import 'element-ui/lib/theme-chalk/index.css'
 
 // echarts
 // import echarts from 'echarts'

@@ -1,6 +1,6 @@
 <template>
-  <el-dialog :title="form.id?'编辑':'新增'" v-if="visible" :visible="visible" :close-on-click-modal="false" width="50%" @close="close">
-    <el-form ref="form" :model="form" :rules="rules" label-width="80px" size="small">
+  <el-dialog :title="form.id?'编辑':'新增'" v-if="visible" :visible="visible" :close-on-click-modal="false" width="40%" @close="close">
+    <el-form class="t-form-block" ref="form" :model="form" :rules="rules" label-width="80px" size="small">
       <el-form-item label="姓名：" prop="name">
         <el-input v-model="form.name"></el-input>
       </el-form-item>

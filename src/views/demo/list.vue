@@ -1,9 +1,8 @@
 <template>
   <div>
-    <!-- card -->
-    <el-card class="box-card">
-      <!-- filter -->
-      <el-form :inline="true" :model="conditionForm" size="small">
+    <div class="t-operate-top">
+      <!-- 查询条件 -->
+      <el-form class="t-operate-filter" :inline="true" :model="conditionForm" size="small">
         <el-form-item>
           <el-input v-model="conditionForm.keyword" placeholder="输入关键字">
             <el-button slot="append">查询</el-button>
@@ -17,18 +16,28 @@
           </el-select>
         </el-form-item>
       </el-form>
+    </div>
 
-      <!-- operate -->
-      <div>
-        <el-button type="primary" size="mini" @click="addEdit()">新增</el-button>
+    <!-- 列表 -->
+    <el-card class="t-box-card">
+      <div slot="header" class="t-box-card-header">
+        <span>学生列表</span>
+        <!-- 操作按钮 -->
+        <div class="t-operate-buttons">
+          <el-button type="theme" size="mini">导入</el-button>
+          <el-button type="theme" size="mini" @click="addEdit()">新增</el-button>
+        </div>
       </div>
 
-      <!-- table -->
-      <el-table :data="tableData" border stripe size="small" tooltip-effect="dark">
-        <el-table-column prop="name" label="姓名" :show-overflow-tooltip="true" header-align="center" align="center"></el-table-column>
-        <el-table-column prop="age" label="年龄" :show-overflow-tooltip="true" header-align="center" align="center"></el-table-column>
-        <el-table-column prop="address" label="地址" :show-overflow-tooltip="true" header-align="center" align="center"></el-table-column>
-        <el-table-column fixed="right" label="操作" width="100" header-align="center" align="center">
+      <!-- 表格 -->
+      <el-table class="t-table-list" ref="table" border stripe size="small" tooltip-effect="dark"
+         :data="tableData" @selection-change="handleSelectionChange">
+        <el-table-column type="selection" width="40"></el-table-column>
+        <el-table-column type="index" label="序号" width="50" align="center"></el-table-column>
+        <el-table-column prop="name" label="姓名" :show-overflow-tooltip="true" align="center"></el-table-column>
+        <el-table-column prop="age" label="年龄" :show-overflow-tooltip="true" align="center"></el-table-column>
+        <el-table-column prop="address" label="地址" :show-overflow-tooltip="true" align="center"></el-table-column>
+        <el-table-column fixed="right" label="操作" width="100" align="center">
           <template slot-scope="scope">
             <el-button type="text" size="small" @click="addEdit(scope.row)">编辑</el-button>
             <el-button type="text" size="small" @click="del(scope.row)">删除</el-button>
@@ -36,18 +45,20 @@
         </el-table-column>
       </el-table>
 
-      <!-- pagination -->
-      <el-pagination
-        small
-        background
-        @size-change="handleSizeChange"
-        @current-change="handleCurrentChange"
-        :current-page="currentPage"
-        :page-sizes="[10, 20, 50, 100]"
-        :page-size="pageSize"
-        :total="200"
-        layout="total, sizes, prev, pager, next, jumper"
-      ></el-pagination>
+      <div class="t-operate-footer">
+        <!-- 批量操作 -->
+        <div class="t-batch-operate">
+          <el-checkbox v-model="isSelectAll" class="t-select-all" @change="selectAll()">全选</el-checkbox>
+          <el-button type="theme" size="mini" :disabled="!this.multipleSelection.length">删除</el-button>
+        </div>
+
+        <!-- 分页 -->
+        <el-pagination class="t-table-pagination" small background @size-change="handleSizeChange" @current-change="handleCurrentChange"
+          :current-page="currentPage" :page-sizes="pageSizes" :page-size="pageSize" :total="200"
+          layout="total, sizes, prev, pager, next, jumper"
+        ></el-pagination>
+      </div>
+      
     </el-card>
 
     <addEdit :dataForm="addEditForm" :visible.sync="addEditVisible" @save="addEditSave"></addEdit>
@@ -55,9 +66,12 @@
 </template>
 <script>
 import addEdit from "./add-edit";
+import { pageSizes, pageSize } from "../../config.js";
 export default {
   data () {
     return {
+      pageSizes,
+      pageSize,
       conditionForm: {},
       tableData: [
         { id: 1, age: '16', name: '张三', address: '北京' }, 
@@ -68,8 +82,9 @@ export default {
         { id: 6, age: '19', name: '张三', address: '上海' }, 
         { id: 7, age: '15', name: '李四', address: '成都' }, 
       ],
+      isSelectAll: false,
+      multipleSelection: [],
       currentPage: 1,
-      pageSize: 10,
       addEditForm: {},
       addEditVisible: false
     }
@@ -111,6 +126,18 @@ export default {
         }).catch(() => {
           this.$message.info('已取消删除');          
         });
+    },
+    /**
+     * 全选
+     */
+    selectAll(){
+      this.$refs.table.toggleAllSelection();
+    },
+    handleSelectionChange(val){
+      this.multipleSelection = val;
+
+      // 判断是否是全选
+      this.isSelectAll = this.tableData.length === this.multipleSelection.length;
     }
   },
   components: {

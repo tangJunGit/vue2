@@ -13,8 +13,8 @@ function getMatchMenu(menuList, currentMenuName) {
     let getNode = (json, nodeName) => { 
         for (let i = 0; i < json.length; i++) {
             let obj = json[i];
-            // if (!nodeName) break;
-            // if (!obj || !obj[code]) continue;
+            if (!nodeName) break;
+            if (!obj || !obj[code]) continue;
             if (obj[code] == nodeName) {
                 node = obj;
                 break;
