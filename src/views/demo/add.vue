@@ -1,7 +1,11 @@
 <template>
     <div>
-        <el-form class="t-form-block" ref="form" :model="form" :rules="rules" label-width="80px" size="small">
-            <el-row>
+      <el-card class="t-box-card">
+        <div slot="header" class="t-box-card-header">
+          <span>添加学生</span>
+        </div>
+        <el-form class="t-page-form t-form-block" ref="form" :model="form" :rules="rules" label-width="80px" size="small">
+            <el-row :gutter="50">
                 <el-col :span="12">
                     <el-form-item label="姓名：" prop="name">
                         <el-input v-model="form.name"></el-input>
@@ -24,6 +28,7 @@
                 <el-button type="primary" @click="save">保存</el-button>
             </el-form-item>
         </el-form>
+      </el-card>
     </div>
 </template>
 <script>

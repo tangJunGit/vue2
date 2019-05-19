@@ -2,15 +2,54 @@
 @navigationBar-height: 60px;     // 顶部导航条高度
 @menu-width: 200px;     // 左侧菜单宽度
 
+.frame-mix();
+.frame-mix(){
+    // ====================  顶部导航条
+    .navigationBar-theme{
+        .logo, .item-wrap .item, 
+        .el-tabs__item, .el-tabs__nav-next, .el-tabs__nav-prev{
+            height: @navigationBar-height;
+            line-height: @navigationBar-height;
+        }
+    }
+
+    // ====================  左侧菜单
+    .menu-theme{
+        width: @menu-width;
+        .menu-list:not(.el-menu--collapse) {
+            width: @menu-width;
+        }
+    }
+
+     // ===================  路由切换tab
+     .router-tabs-theme{
+        top: @navigationBar-height;
+        left: @menu-width;
+    }
+}
+
 // 配色
-.theme-green{
-    @color: rgba(69, 179, 191, 1);    // 主题颜色
-    @color-hover: rgba(69, 179, 191, 0.9);   // 主题颜色 hover/active 效果     (用于按钮等)
-    @color-nav-active: rgba(58, 150, 160, 0.5);   // 主题颜色 hover/active 效果  (用于菜单等)
-    @color-title: rgba(58, 150, 160, 1);     // 左边菜单的标题颜色
+.theme-blue{
+    @color: #4593bf;    
+    @color-hover: #3184b3;  
+    @color-title: #30759c;  
 
     .theme-mix();
 }
+// .theme-green{
+//     @color: #45b3bf;    // 主题颜色
+//     @color-hover: #3fa3ae;   // 主题颜色 hover/active 效果 
+//     @color-title: #3a96a0;     // 左边菜单的标题颜色
+
+//     .theme-mix();
+// }
+// .theme-red{
+//     @color: #ca536a;    
+//     @color-hover: #cc6c7e;   
+//     @color-title: #b54a5f; 
+
+//     .theme-mix();
+// }
 
 .theme-mix(){
     // ====================  登录界面
@@ -30,7 +69,7 @@
         .el-tabs__item{
             background-color: @color;
             &:hover,&.is-active{
-                background-color: @color-nav-active;
+                background-color: @color-hover;
             }
         }
     }
@@ -50,7 +89,7 @@
             background-color: @color;
         }
         .el-submenu__title:hover, .el-menu-item:focus, .el-menu-item:hover, .el-menu-item.is-active {
-            background-color: @color-nav-active;
+            background-color: @color-hover;
         }
         .menu-title{
             background-color: @color-title;
@@ -98,13 +137,14 @@
         color: @color-hover;
     }
     .el-pagination.is-background .el-slider__bar, .el-progress-bar__inner,
-    .el-badge__content, .el-tabs__active-bar, .el-pager li:not(.disabled).active{
+    .el-badge__content, .el-tabs__active-bar, .el-pagination.is-background .el-pager li:not(.disabled).active{
         background-color: @color;
     }
     .el-form-item.is-error .el-input__inner, .el-form-item.is-error .el-textarea__inner, 
     .el-message-box__input input.invalid, .el-input.is-active .el-input__inner, 
     .el-select .el-input.is-focus .el-input__inner,.el-checkbox.is-bordered.is-checked,
-    .el-textarea__inner:focus, .el-slider__button, .el-step__icon.is-text{
+    .el-textarea__inner:focus, .el-slider__button, .el-step__icon.is-text,
+    .el-cascader .el-input.is-focus .el-input__inner{
         border-color: @color;
     }
     .el-form-item.is-error .el-input__inner:focus, .el-form-item.is-error .el-textarea__inner:focus, 
