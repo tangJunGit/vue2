@@ -22,7 +22,11 @@
     }
 
      // ===================  路由切换tab
-     .router-tabs-theme{
+     .router-tabs-theme .el-tabs__header{
+        top: @navigationBar-height;
+        left: @menu-width;
+    }
+    .router-tabs-header-theme{
         top: @navigationBar-height;
         left: @menu-width;
     }
@@ -95,15 +99,6 @@
             background-color: @color-title;
         }
     }
-
-
-
-    // ===================  路由切换tab
-    .router-tabs-theme{
-        top: @navigationBar-height;
-        left: @menu-width;
-    }
-
     
 
     // ====================  element-ui组件

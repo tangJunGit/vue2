@@ -256,15 +256,18 @@ body{
 
 //  ================  路由切换tab     =====================
 .t-tabs{
-  position: absolute;
-  right: 0;
-  z-index: 99;
   .el-tabs{
-    .el-tabs__header .el-tabs__nav .el-tabs__item{
-      height: 30px;
-      line-height: 30px;
-      font-size: 12px;
-      padding: 0 10px;
+    .el-tabs__header{
+      position: fixed;
+      right: 0;
+      z-index: 999;
+      background-color: #fff;
+      .el-tabs__nav .el-tabs__item{
+        height: 30px;
+        line-height: 30px;
+        font-size: 12px;
+        padding: 0 10px;
+      }
     }
     &.el-tabs--top{
       .el-tabs__item:last-child{
@@ -272,7 +275,7 @@ body{
       }
     }
     .el-tabs__content{
-      padding: 5px 10px;
+      padding: 10px;
       font-size: 12px;
       color: #606266;
     }
@@ -285,6 +288,23 @@ body{
       .el-breadcrumb__separator{
         margin: 0 2px;
       }
+    }
+    .t-tabs-header{
+      position: fixed;
+      right: 0;
+      z-index: 998;
+      padding: 35px 10px 5px;
+      border-bottom: 1px solid #e4e7ed;
+      background-color: #fff;
+      box-shadow: 0 2px 4px 0 #e4e7ed;
+    }
+    .t-tab-placeholder{
+      height: 55px;
+    }
+    &.el-tabs--border-card{
+      background: transparent;
+      border: none;
+      box-shadow: none;
     }
   }
   .el-tabs__nav-next, .el-tabs__nav-prev{

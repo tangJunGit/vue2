@@ -89,6 +89,9 @@ export default {
       addEditVisible: false
     }
   },
+  activated(){
+    console.log('处理更新的数据');
+  },
   methods: {
     /**
      * 改变每页多少条
