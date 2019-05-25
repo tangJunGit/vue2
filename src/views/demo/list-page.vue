@@ -65,8 +65,8 @@
   </div>
 </template>
 <script>
-import addEdit from "./add-edit";
-import { pageSizes, pageSize } from "../../config.js";
+import addEdit from "./add-edit-dialog";
+import { pageSizes, pageSize } from "@/config.js";
 export default {
   data () {
     return {

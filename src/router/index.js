@@ -11,14 +11,14 @@ export default new Router({
     { path: '/container', component: _import('common/container'), children: [
         { path: '/', redirect: '/error/404' },
         { 
-          path: '/demo/list', name: 'demoList', component: _import('demo/list'), 
+          path: '/demo/list', name: 'demoList', component: _import('demo/list-page'), 
           // title 表示菜单位置层级，需要自定义
           // title第一个为模块名      title最后一个为菜单名
           // 会根据菜单名去查询到菜单的index
           meta: {title: ['学校管理', '学生管理', '学生信息']} 
         },
         { 
-          path: '/demo/add', name: 'demoAdd', component: _import('demo/add'), 
+          path: '/demo/add', name: 'demoAdd', component: _import('demo/add-edit-page'), 
           meta: {title: ['学校管理', '学生管理', '添加学生']} 
         },
         { 
