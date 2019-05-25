@@ -99,10 +99,10 @@
             background-color: @color-title;
         }
     }
-    
 
     // ====================  element-ui组件
-    .el-button--default:focus, .el-button--default:hover, .el-button--default:active {
+    .el-button--default:focus, .el-button--default:hover, .el-button--default:active,
+    .el-button.is-plain:focus, .el-button.is-plain:hover {
         color: @color;
         border-color: @color;
     }
@@ -112,15 +112,21 @@
     .el-switch.is-checked .el-switch__core{
         border-color: @color;
         background-color: @color;
+        color: #fff;
     }
     .el-button--primary:focus, .el-button--primary:hover{
+        color: #fff;
         border-color: @color-hover;
         background: @color-hover;
     }
     .el-button--text, .el-radio__input.is-checked+.el-radio__label, 
     .el-checkbox.is-bordered.is-checked, .el-checkbox__input.is-checked+.el-checkbox__label,
     .el-tag, .el-tabs__item.is-active, .el-tabs--border-card>.el-tabs__header .el-tabs__item.is-active,
-    .el-step__head.is-finish, .el-step__title.is-finish, .el-step__description.is-finish{
+    .el-step__head.is-finish, .el-step__title.is-finish, .el-step__description.is-finish,
+    .el-select-dropdown__item.selected, .el-cascader-menu__item.is-active,
+    .time-select-item.selected:not(.disabled), .el-time-panel__btn.confirm, .el-month-table td.current:not(.disabled) .cell,
+    .el-date-picker__header-label.active, .el-year-table td.current:not(.disabled) .cell,
+    .el-date-table td.today span,{
         color: @color;
     }
     .el-button--text:focus, .el-button--text:hover, .el-tabs__item:hover,
@@ -128,11 +134,18 @@
     .el-tabs--border-card>.el-tabs__header .el-tabs__item:not(.is-disabled):hover,
     .el-breadcrumb__inner a:hover, .el-breadcrumb__inner.is-link:hover,
     .el-input-number__decrease:hover, .el-input-number__increase:hover,
-    .el-transfer-panel__item:hover, .el-radio-button__inner:hover{
+    .el-transfer-panel__item:hover, .el-radio-button__inner:hover,
+    .el-date-picker__header-label:hover,.el-year-table td .cell:hover, 
+    .el-month-table td .cell:hover, .el-picker-panel__icon-btn:hover, .el-picker-panel__shortcut:hover,
+    .el-dropdown-menu__item:focus, .el-dropdown-menu__item:not(.is-disabled):hover{
         color: @color-hover;
     }
     .el-pagination.is-background .el-slider__bar, .el-progress-bar__inner,
-    .el-badge__content, .el-tabs__active-bar, .el-pagination.is-background .el-pager li:not(.disabled).active{
+    .el-badge__content, .el-tabs__active-bar, .el-pagination.is-background .el-pager li:not(.disabled).active,
+    .el-date-table td.available:hover span,
+    .el-date-table td.end-date span, .el-date-table td.start-date span,
+    .el-date-table td.selected span, .el-date-table td.current:not(.disabled) span{
+        color: #fff;
         background-color: @color;
     }
     .el-form-item.is-error .el-input__inner, .el-form-item.is-error .el-textarea__inner, 
@@ -146,10 +159,6 @@
     .el-message-box__input input.invalid:focus, .el-input__inner:focus, 
     .el-pagination__sizes .el-input .el-input__inner:hover, .el-checkbox__inner:hover, .el-radio__inner:hover{
         border-color: @color-hover;
-    }
-    .el-pagination.is-background .el-pager li:not(.disabled).active,
-    .el-radio-button__orig-radio:checked+.el-radio-button__inner{
-        color: #fff;
     }
     .el-input-group__append button.el-button, .el-input-group__append div.el-select .el-input__inner, 
     .el-input-group__append div.el-select:hover .el-input__inner, .el-input-group__prepend button.el-button, 
