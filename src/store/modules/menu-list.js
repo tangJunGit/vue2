@@ -82,6 +82,7 @@ const mutations = {
         // 设置当前菜单的index
         let menuList = getters.menuList();
         let current = getMatchMenu(menuList, state.activeMenuName);
+        if(current === null) return;   // 未找到相应菜单
         state.activeMenuIndex = current.index;
     },
   }

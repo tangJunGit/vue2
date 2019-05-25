@@ -1,7 +1,7 @@
 <template>
   <div class="t-tabs">
     <el-tabs class="router-tabs-theme" v-model="activeIndex" v-if="openTab.length" type="border-card" closable @tab-click='tabClick' @tab-remove='tabRemove'>
-      <el-tab-pane :key="item.name" v-for="item in openTab" :label="item.meta.title[item.meta.title.length-1]" :name="item.path">
+      <el-tab-pane :key="item.path" v-for="item in openTab" :label="item.meta.title[item.meta.title.length-1]" :name="item.path">
         <div class="router-tabs-header-theme t-tabs-header">
           <span>当前位置：</span>
           <el-breadcrumb separator=">" class="t-breadcrumb">
@@ -55,7 +55,7 @@ export default {
         let flag = false;
         for(let item of this.openTab){
           // 如果已经是打开的，将其置为active
-          if(item.name === to.name){
+          if(item.path === to.path){
             this.activeIndex = to.path;
             flag = true;
             break;
