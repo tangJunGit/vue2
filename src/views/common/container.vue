@@ -8,7 +8,7 @@
         <el-aside width="auto" class="menu-aside-theme aside">
           <menuAside :isCollapse="isCollapse"></menuAside>
         </el-aside>
-        <el-main class="main">
+        <el-main class="menu-main-theme main">
           <router-tab></router-tab>
         </el-main>
       </el-container>
