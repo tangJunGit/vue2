@@ -1,4 +1,4 @@
-const time = {
+export const time = {
   format (date, format) {
     if (format === undefined) {
       format = date
@@ -30,4 +30,9 @@ const time = {
   }
 }
 
-export { time }
+export const getLabel = (value, list, valueKey = 'value', labelKey = 'label') => {
+  if(!list || !list.length) return ''
+  let filter = list.filter(item => item[valueKey] === value);
+  
+  return filter.length > 0 ? filter[0][labelKey] : '';
+}
