@@ -1,19 +1,21 @@
 <template>
-  <div class="t-tabs">
-    <el-tabs class="router-tabs-theme" v-model="activeIndex" v-if="openTab.length" type="border-card" closable @tab-click='tabClick' @tab-remove='tabRemove'>
-      <el-tab-pane :key="item.path" v-for="item in openTab" :label="item.meta.title[item.meta.title.length-1]" :name="item.path">
-        <div class="router-tabs-header-theme t-tabs-header">
+  <div>
+    <div class="t-tabs">
+      <el-tabs class="router-tabs-theme" v-model="activeIndex" v-if="openTab.length" type="border-card" closable @tab-click='tabClick' @tab-remove='tabRemove'>
+        <el-tab-pane :key="item.path" v-for="item in openTab" :label="item.meta.title[item.meta.title.length-1]" :name="item.path">
+          <div class="router-tabs-header-theme t-tabs-header">
           <span>当前位置：</span>
-          <el-breadcrumb separator=">" class="t-breadcrumb">
-            <el-breadcrumb-item v-for="(item, index) in item.meta.title" :key="index">{{item}}</el-breadcrumb-item>
-          </el-breadcrumb>
-        </div>
-        <div class="t-tab-placeholder"></div>
-        <keep-alive>
-          <router-view v-if="activeIndex == item.path"/>
-        </keep-alive>
-      </el-tab-pane>
-    </el-tabs>
+            <el-breadcrumb separator=">" class="t-breadcrumb">
+              <el-breadcrumb-item v-for="(item, index) in item.meta.title" :key="index">{{item}}</el-breadcrumb-item>
+            </el-breadcrumb>
+          </div>
+          <div class="t-tab-placeholder"></div>
+        </el-tab-pane>
+      </el-tabs>
+    </div>
+    <keep-alive>
+      <router-view/>
+    </keep-alive>
   </div>
 </template>
 <script>
