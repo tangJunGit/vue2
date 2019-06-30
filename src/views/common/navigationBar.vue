@@ -11,7 +11,7 @@
       <div class="item-wrap">
         <div class="item">
           <i class="icon fa fa-volume-up"></i>
-          <span class="border-right">(<span class="small">12</span>)</span>
+          <span class="border-right">(<span class="small">0</span>)</span>
         </div>
         <div class="item">
           <span>admin</span>
